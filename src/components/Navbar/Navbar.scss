@@ -4,13 +4,12 @@
     position: fixed;
     overflow: scroll;
     transition: 600ms ease;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
     z-index: 2;
     &::-webkit-scrollbar {
       display: none;
     }
-
+    -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
     &::-webkit-scrollbar-thumb {
       display: none;
     }
@@ -116,6 +115,8 @@
       bottom: 0;
       width: 100vw;
       height: 5rem;
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
   
       .navbar-nav {
         flex-direction: row;

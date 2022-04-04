@@ -1,7 +1,10 @@
 import React from 'react';
 import './App.scss';
 import Navbar from './components/Navbar';
+import AboutMe from './pages/AboutMe';
+import ContactMe from './pages/ContactMe';
 import Intro from './pages/Intro';
+import MyProjects from './pages/MyProjects';
 
 
 
@@ -10,6 +13,9 @@ const App = () => {
     <>
       <Navbar/>
       <Intro/>
+      <AboutMe/>
+      <MyProjects/>
+      <ContactMe/>
     </>
   )
 }

@@ -8,13 +8,30 @@
     overflow-y: hidden;
     height: 100vh;
     
+
+    background-image: url("../../assets/images/deepdark.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+
+    
     &__title {
         font-size: 11vw;
         color: $color-title;
         opacity: 85%;
         font-weight: 200;
+        text-align: center;
     }
+
 }
+
+
+
+
+
+
+
 
 
 

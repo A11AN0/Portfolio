@@ -3,9 +3,39 @@ import './Navbar.scss';
 
 
 
-const Navbar = () => {
+const Navbar = (props:any) => {
+
+  //prop, true if navbar is extended, false if not
+  const {setIsNavExtended} = props;
+
+  //Procedure to set 
+  const getWindowDimensions = () => {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+
+  //Functi
+  const handleNavMouseEvent = (event: React.MouseEvent<HTMLInputElement>) => {
+    const windowWidth = getWindowDimensions().width
+    if (windowWidth < 768){
+      setIsNavExtended(false)
+      return
+    } 
+
+    const e = event.type;
+    e === 'mouseenter' && setIsNavExtended(true);
+    e === 'mouseleave' && setIsNavExtended(false);
+  }
+
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" 
+    onMouseEnter={handleNavMouseEvent}
+    onMouseLeave={handleNavMouseEvent}
+    >
         <ul className="navbar-nav">
           <li className="logo">
             <a href="#allan" className="nav-link">

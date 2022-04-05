@@ -145,7 +145,7 @@
       height: 100vh;
   
       &:hover {
-        width: 16rem;
+        width: $navBar-width;
   
         .link-text {
           display: inline;

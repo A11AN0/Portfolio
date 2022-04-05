@@ -1,10 +1,10 @@
 import React from 'react'
 import './AboutMe.scss'
 
-const AboutMe = () => {
+const AboutMe = (props:any) => {
   return (
-    <section className="about-me">
-        <h1 className="about-me__title" id="about">
+    <section className="about-me" id="about">
+        <h1 className="about-me__title">
             About Me.
         </h1>
         <div className="about-me__h-container">

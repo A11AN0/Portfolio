@@ -1,10 +1,10 @@
 import React from 'react';
 import './MyProjects.scss';
 
-const MyProjects = () => {
+const MyProjects = (props:any) => {
   return (
-    <section className="my-projects">
-            <h1 className="my-projects__title" id="projects">
+    <section className="my-projects" id="projects">
+            <h1 className="my-projects__title" >
                 My Projects.
             </h1>
             <div className="my-projects__h-container">

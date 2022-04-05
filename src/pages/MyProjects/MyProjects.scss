@@ -8,10 +8,16 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
+        overflow-y: hidden;
+
+        background-image: url("../../assets/images/shiny.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: fixed;
   
     &__title {
       font-size: 8vw;
-      margin-bottom: 10px;
       color: $color-title;
       font-weight: 200;
       text-decoration: underline;
@@ -19,7 +25,6 @@
     }
   
     &__h-container {
-      margin-bottom: 100px;
       width: 80%;
       height: 65%;
       display: flex;

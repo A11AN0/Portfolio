@@ -5,23 +5,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;  
+    height: 100vh;
+    width: 100%;
+    
+    
+    
+    background-image: url("../../assets/images/pastelpurple.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
   
     &__title {
       font-size: 8vw;
-      margin-bottom: 10px;
       color: $color-title;
       font-weight: 200;
       text-decoration: underline;
       text-decoration-thickness: 1px;
-      text-align: center;
-       
+      text-align: center; 
     }
   
     &__h-container {
       width: 100%;
-      height: fit-content;
+      height: 500px;
       display: flex;
       justify-content: space-between;
       overflow-x: auto;

@@ -1,10 +1,10 @@
 import React from 'react';
 import './ContactMe.scss';
 
-const ContactMe = () => {
+const ContactMe = (props:any) => {
     return (
-        <section className="contact-me">
-            <h1 className="contact-me__title" id="contact">
+        <section className="contact-me" id="contact">
+            <h1 className="contact-me__title" >
                 Contact Me.
             </h1>
             <div className="contact-me__text">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 import Navbar from './components/Navbar';
 import AboutMe from './pages/AboutMe';
@@ -9,13 +9,16 @@ import MyProjects from './pages/MyProjects';
 
 
 const App = () => {
+
+  const [isNavExtended, setIsNavExtended] = useState(false);
+
   return (
     <>
-      <Navbar/>
-      <Intro/>
-      <AboutMe/>
-      <MyProjects/>
-      <ContactMe/>
+      <Navbar setIsNavExtended={setIsNavExtended}/>
+      <Intro isNavExtended={isNavExtended}/>
+      <AboutMe isNavExtended={isNavExtended}/>
+      <MyProjects isNavExtended={isNavExtended}/>
+      <ContactMe isNavExtended={isNavExtended}/>
     </>
   )
 }

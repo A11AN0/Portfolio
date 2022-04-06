@@ -9,6 +9,7 @@
         justify-content: center;
         height: 100vh;
         overflow-y: hidden;
+        scroll-snap-align: start;
 
         background-image: url("../../assets/images/shiny.jpg");
         background-size: cover;

@@ -7,6 +7,8 @@
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
+    scroll-snap-align: start;
+    
     
     display: flex;
     flex-direction: column;
@@ -49,11 +51,11 @@
       
   
       * {
-        transition: 300ms ease;
+        // transition: 300ms ease;
         text-decoration: none;
         &:hover {
           font-size: larger;
-          transition: 300ms ease;  
+          // transition: 300ms ease;  
         }
   
       }

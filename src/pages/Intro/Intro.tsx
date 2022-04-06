@@ -19,7 +19,7 @@ const Intro = (props:any) => {
 
     //The rising animation for the arrow
     const arrowAnimationTimeline = gsap.timeline();
-    arrowAnimationTimeline.delay(4)
+    arrowAnimationTimeline.delay(2)
     arrowAnimationTimeline.to(".intro__title__arrow", {y:70, duration: 1.5,})
     arrowAnimationTimeline.repeat(-1).yoyo(true).play();
   }, []);

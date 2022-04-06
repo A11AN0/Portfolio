@@ -6,18 +6,18 @@
   height: 100vh;
   width: 100%;
   scroll-snap-align: start;
+  overflow-y: hidden;
+  overflow-x: hidden;
   
   
   
-  background-image: url("../../assets/images/pastelpurple.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-attachment: fixed;
+  
+  
+
 
   
   &__title {
-    position: relative;
+    z-index: 2;
     padding: 10px 0 5px 0;
     font-size: 8vw;
     color: $color-title;
@@ -25,12 +25,57 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-align: center; 
-    background-color: brown;
+    // background-color: brown;
     
 
     &__arrow{
       margin-left: 5%;
       margin-right: 5%;
+    }
+  }
+
+  &__contents{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    // background-color: aqua;
+    // opacity: 90%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    
+    &__carousel{
+      display: flex;
+      justify-content: center;
+      // background-color: palegreen;
+      width: 300%;
+      height: 100%;
+
+      &__page{
+        scroll-snap-align: start;
+        width: 100vw;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: fixed;
+
+        &--skills{
+          // background-color: brown;
+          background-image: url("../../assets/images/pastelpurple.jpg");
+        }
+
+        &--about{
+          // background-color: blue;
+          background-image: url("../../assets/images/lapis.jpg");
+        }
+
+        &--techstack{
+          // background-color: red;
+          background-image: url("../../assets/images/ultraviolet.jpg");
+        }
+      }
     }
   }
   

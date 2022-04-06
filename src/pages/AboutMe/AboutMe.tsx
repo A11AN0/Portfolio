@@ -26,7 +26,15 @@ const AboutMe = ({isNavExtended}:AppProps) => {
           <FontAwesomeIcon icon={faChevronLeft} className="about-me__title__arrow"/>
             About Me.
           <FontAwesomeIcon icon={faChevronRight} className="about-me__title__arrow"/>
-        </div> 
+        </div>
+
+        <div className="about-me__contents">
+          <div className="about-me__contents__carousel">
+            <div className="about-me__contents__carousel__page about-me__contents__carousel__page--skills"></div>
+            <div className="about-me__contents__carousel__page about-me__contents__carousel__page--about"></div>
+            <div className="about-me__contents__carousel__page about-me__contents__carousel__page--techstack"></div>
+          </div>
+        </div>  
         
         
     </section>

@@ -1,231 +1,40 @@
 @import "../../assets/styles/styles.scss";
 
 .about-me {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+  
+  
+  
+  background-image: url("../../assets/images/pastelpurple.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+
+  
+  &__title {
+    position: relative;
+    padding: 10px 0 5px 0;
+    font-size: 8vw;
+    color: $color-title;
+    font-weight: 200;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-align: center; 
+    background-color: brown;
     
-    
-    
-    background-image: url("../../assets/images/pastelpurple.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-attachment: fixed;
-  
-    &__title {
-      font-size: 8vw;
-      color: $color-title;
-      font-weight: 200;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-align: center; 
-    }
-  
-    &__h-container {
-      width: 100%;
-      height: 500px;
-      display: flex;
-      justify-content: space-between;
-      overflow-x: auto;
-      overflow-y: hidden;
-      align-items: center;
-      border-radius: 10px;
-      z-index: 1;
-      scroll-snap-type:x mandatory;
-  
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        display: none ;
-      }
-  
-      &__description {
-        
-        
-        height: fit-content;
-        width: 100%;
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        justify-items: center;
-  
-        &__title {
-          color: $color-title;
-          text-align: center;
-          font-size: 5vw;
-          font-weight: 250;
-        }
-        
-       
-  
-        &__text {
-          color: $color-title;
-          height: fit-content;
-          width: 74%;
-          font-size: 5vw;
-          line-height: 2em;
-          text-align: center;
-          font-weight: 300;
-        }
-      
-      }
-  
-      &__tech-stack {
-        
-        font-size: 20vw;
-        height: fit-content;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        flex-shrink: 0;
-        margin-left: 5%;
-        border-radius: 10px;
-        scroll-snap-align: start;
-        margin-bottom: 20%;
-  
-        &__box {
-          color: $color-title;
-          height: 100%;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: 0.7em;
-          grid-auto-rows: 1.3em;
-          width: 74%;
-  
-          &__symbol {
-            text-align: center;
-          }
-  
-          &__title {
-            grid-column: span 2;
-            text-align: center;
-            margin:10px;
-            line-height: 1em;
-            font-size: 5vw;
-            font-weight: 250;
-          }
-        } 
-      }
-  
-      
-    }
-  }
-  
-  @media screen and (min-width: 481px) {
-    .about-me {
-      
-      
-      &__h-container {
-        &__description {
-          &__text {
-            font-size: 25px;
-            
-          }
-        }
-  
-        &__tech-stack {
-          font-size: 100px;
-          &__box {
-            grid-template-columns: 1fr 1fr 1fr;
-            
-            &__title {
-              grid-column: span 3;
-            }
-          }
-        }
-    
-      }
+
+    &__arrow{
+      margin-left: 5%;
+      margin-right: 5%;
     }
   }
   
   
   
-  @media screen and (min-width: 768px) {
-    .about-me {
-        
-      &__title {
-        margin-left: 5rem;
-      }
-      
-      &__h-container {
-        &__description {
-          &__title {
-            font-size: 3.5vw;
-          }
   
-          &__text {
-            font-size: 3.5vw;
-            margin-left: 5rem;
-          }
-        }
-  
-        &__tech-stack {
-          &__box {
-            grid-template-columns: 1fr 1fr 1fr;
-            margin-left: 5rem;
-            &__title {
-              grid-column: span 3;
-              font-size: 3.5vw;
-            }
-          }
-        }
-  
-         
-      }
-    }
-  }
-  
-  
-  
-  @media screen and (min-width: 991px) {
-    .about-me {
-      
-      
-      &__h-container {
-        &__description {
-          &__text {
-            font-size: 3.15vw;
-            
-          }
-        }
-  
-        &__tech-stack {
-          font-size: 135px;
-          margin-top: auto;
-          &__box {
-            grid-template-columns: 1fr 1fr 1fr;
-            
-            &__title {
-              grid-column: span 3;
-            }
-          }
-        }
-    
-      }
-    }
-  }
-  
-  @media screen and (min-width: 1200px) {
-    .about-me {
-      
-      
-      &__h-container {
-        &__description {
-          &__text {
-            font-size: 35px;
-            
-          }
-        }
-    
-      }
-    }
-  }
+}

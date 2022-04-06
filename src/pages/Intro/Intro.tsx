@@ -1,31 +1,46 @@
 import React, {useEffect, useRef} from 'react';
 import './Intro.scss';
 import gsap from "gsap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const Intro = (props:any) => {
 
   const {isNavExtended} = props;
 
+  //The rising animation for the title + repeating arrow motion
   const title:any = useRef();
-
-  //The rising animation for the title
   useEffect(() => {
-    gsap.from(title.current, { y: '250px',opacity: 0, duration: 3, color: 'black'});
+    const animationTimeline = gsap.timeline();
+    animationTimeline.from(title.current, { y: '250px',opacity: 0, duration: 2, color: 'black'});
+    animationTimeline.to(".intro__title__arrow", { duration: 2, opacity: '50%' }, "+=0.5");
+
+    //The rising animation for the arrow
+    const arrowAnimationTimeline = gsap.timeline();
+    arrowAnimationTimeline.delay(4)
+    arrowAnimationTimeline.to(".intro__title__arrow", {y:70, duration: 1.5,})
+    arrowAnimationTimeline.repeat(-1).yoyo(true).play();
   }, []);
   
   //Animates the transition of the title when the navbar is extended
+  const container:any = useRef();
   useEffect(() => {
     isNavExtended? 
-    gsap.to(title.current, { marginLeft: '16rem', duration: 0.5})
+    gsap.to(container.current, { marginLeft: '16rem', duration: 0.5})
     :
-    gsap.to(title.current, { marginLeft: '0', duration: 0.5})
+    gsap.to(container.current, { marginLeft: '0', duration: 0.5})
     
   }, [isNavExtended]);
 
+  
+
   return (  
     <div className= "intro" id="allan">
-        <div className="intro__title" ref={title}>
-          <p>Hello, I'm Allan.</p>
+        <div className="intro__title" ref={container}>
+          <p ref={title}>Hello, I'm Allan.</p>
+          <FontAwesomeIcon icon={faChevronDown} className="intro__title__arrow"/>
         </div>
     </div>
   )

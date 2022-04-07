@@ -60,6 +60,7 @@
         background-repeat: no-repeat;
         background-position: top;
         background-attachment: fixed;
+        
 
         &--skills{
           // background-color: brown;
@@ -67,9 +68,8 @@
           
         }
 
-        &--about{
-          // background-color: blue;
-          background-image: url("../../assets/images/pastelpurple.jpg");
+        &--description{
+          background-color: black;
         }
 
         &--techstack{

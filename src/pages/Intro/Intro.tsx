@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 
-
+//will need to change this to a stateful component and remove the use of any
 const Intro = (props:any) => {
 
   const {isNavExtended} = props;

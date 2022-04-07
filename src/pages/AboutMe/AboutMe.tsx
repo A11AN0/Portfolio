@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import './AboutMe.scss';
 import gsap from "gsap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +11,7 @@ type AppProps = {
 
 const AboutMe = ({isNavExtended}:AppProps) => {
   
+  //Behavior of the title when nav is extended
   useEffect(() => {
     isNavExtended? 
     gsap.to(".about-me__title", { marginLeft: '16rem', duration: 0.5})
@@ -18,6 +19,12 @@ const AboutMe = ({isNavExtended}:AppProps) => {
     gsap.to(".about-me__title", { marginLeft: '0', duration: 0.5})
     
   }, [isNavExtended]);
+
+  //So that the container will scroll to the center div upon mounting
+  const scrollContainer:any = useRef();
+  useEffect(() => {
+    scrollContainer.current.scrollTo(window.innerWidth, 0);
+  }, []);
 
 
   return (
@@ -28,7 +35,7 @@ const AboutMe = ({isNavExtended}:AppProps) => {
           <FontAwesomeIcon icon={faChevronRight} className="about-me__title__arrow"/>
         </div>
 
-        <div className="about-me__contents">
+        <div className="about-me__contents" ref={scrollContainer}>
           <div className="about-me__contents__carousel">
             <div className="about-me__contents__carousel__page about-me__contents__carousel__page--skills"></div>
             <div className="about-me__contents__carousel__page about-me__contents__carousel__page--about"></div>

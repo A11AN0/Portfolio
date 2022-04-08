@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import './AboutMe.scss';
 import gsap from "gsap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft} from '@fortawesome/free-solid-svg-icons';
 import Description from './Description/Description';
 
 

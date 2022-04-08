@@ -8,14 +8,6 @@
   scroll-snap-align: start;
   overflow-y: hidden;
   overflow-x: hidden;
-  
-  
-  
-  
-  
-
-
-  
   &__title {
     z-index: 2;
     padding: 10px 0 5px 0;
@@ -70,6 +62,7 @@
 
         &--description{
           background-color: black;
+          // background-image: url("../../assets/images/pastelpurple.jpg");
         }
 
         &--techstack{

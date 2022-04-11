@@ -19,14 +19,15 @@ const Description = ({ isNavExtended }: AppProps) => {
   useEffect(() => {
     //The rising animation for the arrow, will probably change to onhover, and will dissappear when screen is too small
     const arrowAnimationTimeline = gsap.timeline();
-    arrowAnimationTimeline.to(".description__arrowdown", { y: 35, duration: 1.5 });
+    arrowAnimationTimeline.to(".description__arrowdown", {
+      y: 35,
+      duration: 1.5,
+    });
     arrowAnimationTimeline.repeat(-1).yoyo(true).play();
   }, []);
 
- 
-
   //Arrow display upon nav extension
-  const arrowDisplay = isNavExtended? 'none' : 'initial';
+  const arrowDisplay = isNavExtended ? "none" : "initial";
 
   return (
     <div className="description">

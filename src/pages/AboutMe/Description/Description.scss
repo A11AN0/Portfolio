@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
+    // -webkit-backdrop-filter: blur(5px);
+    // backdrop-filter: blur(5px);
 
     
 
@@ -25,7 +27,7 @@
         align-items: center;
 
         &__paragraph{
-            font-weight: 200;
+            font-weight: 300;
             font-size: 5vmin;
             padding-bottom: 10px;
             letter-spacing: 0.2em;
@@ -35,11 +37,12 @@
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
-            background-image: url("../../../assets/images/grey.jpg");
+            background-image: url("../../../assets/images/rainbow.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top;
             background-attachment: fixed;
+
 
         }
         

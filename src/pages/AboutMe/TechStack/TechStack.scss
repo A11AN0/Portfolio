@@ -1,0 +1,66 @@
+@import "../../../assets/styles/styles.scss";
+
+.tech-stack{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; //can probably change so that the arrow can fit in the bottom eventually
+    // -webkit-backdrop-filter: blur(5px);
+    // backdrop-filter: blur(5px);
+
+    &__top{
+        height: 8vw;
+        padding: 10px 0 5px 0;
+        // background-color: aquamarine;
+        width: 100%;
+    }
+
+    &__title{
+        font-size: 4vw;
+        color: $color-title;
+        font-weight: 200;
+        text-align: center;
+    }
+
+    &__items{
+        width: 100%;
+        height: 70%;
+        text-align: center;
+        display: grid;
+        
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));//Alter the minmax value to adjust the grid size/distribution
+        grid-template-rows: repeat(auto-fit, minmax(20%, 1fr));
+        justify-items: center;
+        align-items: center;
+        &__icon{
+            font-size: 10vmin;
+            opacity: 0.75; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            &__text{
+                font-size: 21%;
+                margin-top: 5px;
+                color: $color-title;
+                font-weight: 400;
+                text-align: center;
+            }
+
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .tech-stack {
+        &__items{
+            width: 80%;
+        }
+              
+    }
+}
+
+
+

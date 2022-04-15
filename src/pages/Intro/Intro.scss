@@ -8,7 +8,6 @@
     overflow-y: hidden;
     height: 100vh;
     scroll-snap-align: start;
-    
 
     background-image: url("../../assets/images/deepdark.jpg");
     background-size: cover;
@@ -16,7 +15,6 @@
     background-position: top;
     background-attachment: fixed;
 
-    
     &__title {
         margin-top: 10%;
         font-size: 11vw;
@@ -24,21 +22,9 @@
         opacity: 85%;
         font-weight: 200;
         text-align: center;
-        
-        &__arrow{
+
+        &__arrow {
             opacity: 0;
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-

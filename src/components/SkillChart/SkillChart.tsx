@@ -27,7 +27,7 @@ const SkillChart = ({
         const arrowAnimationTimeline = gsap.timeline();
         arrowAnimationTimeline.to(chart.current, {
             strokeDashoffset: ((100 - percentage) / 100) * 500,
-            duration: 5,
+            duration: 10,
         });
         console.log(icon.iconName);
     });
@@ -89,15 +89,16 @@ const SkillChart = ({
             </div>
 
             <svg
+                style={{ stroke: `url(#${icon.iconName})` }}
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
                 width="160px"
                 height="160px"
             >
                 <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
+                    <linearGradient id={icon.iconName}>
+                        <stop offset="0%" stop-color={primaryColor} />
+                        <stop offset="100%" stop-color={secondaryColor} />
                     </linearGradient>
                 </defs>
                 <circle

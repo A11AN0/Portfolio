@@ -7,17 +7,18 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        // border: 1px solid #fff;
+        border: 1px solid rgba(255, 1, 1, 0.325);
         display: flex;
         justify-content: center;
         align-items: center;
+        // background-color: rgba(233, 0, 0, 0.507);
 
         &__inner {
             height: 100%;
             width: 100%;
-            border-radius: 7vmin;
-            -webkit-backdrop-filter: blur(50px);
-            backdrop-filter: blur(50px);
+            border-radius: 50%;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,7 +31,7 @@
 
             &__text {
                 position: absolute;
-                top: 100%;
+                top: 104%;
                 color: white;
                 text-transform: uppercase;
                 font-style: italic;
@@ -69,10 +70,11 @@
     .skill {
         width: 160px;
         height: 160px;
-        // background-color: cornflowerblue;
 
         &__outer {
+            border: none;
             position: absolute;
+            background-color: unset;
             width: 160px;
             height: 160px;
             border-radius: 50%;
@@ -80,6 +82,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
 
             &__inner {
                 opacity: initial;
@@ -104,7 +107,7 @@
                     position: absolute;
                     text-transform: uppercase;
                     font-style: italic;
-                    left: 140px;
+                    left: 20vmin;
                     top: initial;
                     color: white;
                     font-weight: 300;
@@ -131,9 +134,10 @@
     .skill {
         &__outer {
             &__inner {
+                cursor: initial;
                 &__text {
                     opacity: 100%;
-                    font-weight: 100;
+                    font-weight: 200;
                     font-size: 2.1vmin;
                     display: initial;
                 }

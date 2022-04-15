@@ -1,74 +1,87 @@
-import {faJsSquare, faHtml5,faSass, faPython, faNpm, faReact, faCss3Alt, faBootstrap, faNode } from '@fortawesome/free-brands-svg-icons';
-import { faCodeMerge, faCogs, faDatabase} from '@fortawesome/free-solid-svg-icons';
+import {
+    faJsSquare,
+    faHtml5,
+    faSass,
+    faPython,
+    faNpm,
+    faReact,
+    faCss3Alt,
+    faBootstrap,
+    faNode,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+    faCodeMerge,
+    faCogs,
+    faDatabase,
+} from "@fortawesome/free-solid-svg-icons";
 
 type techData = {
     techName: string;
     icon: any;
     color: string;
-}
+};
 
-
-const techStackData:techData[] = [
+const techStackData: techData[] = [
     {
-        techName: 'JavaScript & TypeScript',
+        techName: "JavaScript & TypeScript",
         icon: faJsSquare,
-        color: '#fbff26'
+        color: "#fbff26",
     },
     {
-        techName: 'React',
+        techName: "React",
         icon: faReact,
-        color: '#1fd2ff'
+        color: "#1fd2ff",
     },
     {
-        techName: 'Node.js & Express',
+        techName: "Node.js & Express",
         icon: faNode,
-        color: '#00bd39'
+        color: "#00bd39",
     },
     {
-        techName: 'Sass',
+        techName: "Sass",
         icon: faSass,
-        color: '#ff196e'
+        color: "#ff196e",
     },
-    {   techName: 'Jest, Enzyme & React Testing Library',
+    {
+        techName: "Jest, Enzyme & React Testing",
         icon: faCogs,
-        color: 'lightgrey'
+        color: "lightgrey",
     },
     {
-        techName: 'Python',
+        techName: "Python",
         icon: faPython,
-        color: '#7bff00'
+        color: "#7bff00",
     },
     {
-        techName: 'HTML5',
+        techName: "HTML5",
         icon: faHtml5,
-        color: '#ff6e26'
+        color: "#ff6e26",
     },
     {
-        techName: 'CSS3',
+        techName: "CSS3",
         icon: faCss3Alt,
-        color: '#0279f0'
+        color: "#0279f0",
     },
     {
-        techName: 'NPM & Exposure Yarn',
+        techName: "NPM & Yarn",
         icon: faNpm,
-        color: '#f03a02'
+        color: "#f03a02",
     },
     {
-        techName: 'Bootstrap',
+        techName: "Bootstrap",
         icon: faBootstrap,
-        color: '#7e0dff'
+        color: "#7e0dff",
     },
     {
-        techName: 'Git Version Control & GitHub',
+        techName: "Git Version Control & GitHub",
         icon: faCodeMerge,
-        color: 'white'
+        color: "white",
     },
     {
-        techName: 'Firestore and MySQL',
+        techName: "Firestore and MySQL",
         icon: faDatabase,
-        color: '#4db5ff'
+        color: "#4db5ff",
     },
-
-]
+];
 
 export default techStackData;

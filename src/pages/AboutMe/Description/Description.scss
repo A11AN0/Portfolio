@@ -1,24 +1,21 @@
 @import "../../../assets/styles/styles.scss";
 
-.description{
+.description {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    // -webkit-backdrop-filter: blur(5px);
-    // backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur($section-blur);
+    backdrop-filter: blur($section-blur);
 
-    
-
-    &__top{
+    &__top {
         height: 8vw;
         padding: 10px 0 5px 0;
         // background-color: aquamarine;
         width: 100%;
     }
 
-
-    &__text{
+    &__text {
         line-height: 1.6;
         width: max(80%, 250px);
         padding: 5%;
@@ -26,7 +23,7 @@
         flex-direction: column;
         align-items: center;
 
-        &__paragraph{
+        &__paragraph {
             font-weight: 300;
             font-size: 5vmin;
             padding-bottom: 10px;
@@ -42,85 +39,62 @@
             background-repeat: no-repeat;
             background-position: top;
             background-attachment: fixed;
-
-
         }
-        
-
     }
 
-    &__arrowdown{
-    color: white;
-    opacity: 30%;
-    font-size: 11vmin;
+    &__arrowdown {
+        color: white;
+        opacity: 30%;
+        font-size: 11vmin;
     }
-
 }
-
-
-
-
 
 @media screen and (min-width: 300px) {
     .description {
-        &__text{
-
-            &__paragraph{
+        &__text {
+            &__paragraph {
                 font-size: 4vmin;
             }
         }
-              
     }
 }
 
 @media screen and (min-width: 481px) {
     .description {
-        &__text{
-
-            &__paragraph{
+        &__text {
+            &__paragraph {
                 font-size: 3.2vmin;
             }
         }
-              
     }
 }
 
 @media screen and (min-width: 600px) {
     .description {
-        &__text{
-
-            &__paragraph{
+        &__text {
+            &__paragraph {
                 font-size: 3vmin;
             }
         }
-              
     }
 }
 
 @media screen and (min-width: 768px) {
     .description {
-        &__text{
-
-            &__paragraph{
+        &__text {
+            &__paragraph {
                 font-size: 3.3vmin;
             }
         }
-              
     }
 }
-
-
-
 
 @media screen and (min-width: 991px) {
     .description {
-        &__text{
-
-            &__paragraph{
+        &__text {
+            &__paragraph {
                 font-size: 3.6vmin;
             }
         }
-              
     }
 }
-

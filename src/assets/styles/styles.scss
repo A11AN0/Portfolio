@@ -3,19 +3,20 @@
 $color-title: white;
 $color-hover: #6c6ce2;
 $navBar-width: 16rem;
+$section-blur: 0px;
 
 a,
 a:hover,
 a:focus,
 a:active {
-  text-decoration: none;
-  color: $color-title;
+    text-decoration: none;
+    color: $color-title;
 }
 
 $main-font: "Roboto", sans-serif;
 
 * {
-  font-family: $main-font;
-  margin: 0px;
-  padding: 0px;
+    font-family: $main-font;
+    margin: 0px;
+    padding: 0px;
 }

@@ -2,14 +2,22 @@ import React, { SyntheticEvent, useEffect, useRef } from "react";
 import "./SkillChart.scss";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCake } from "@fortawesome/free-solid-svg-icons";
 
 type AppProps = {
-    percentage: string;
+    percentage: number;
     text: string;
+    icon: any;
+    primaryColor: string;
+    secondaryColor: string;
 };
 
-const SkillChart = ({ text, percentage }: AppProps) => {
+const SkillChart = ({
+    text,
+    percentage,
+    icon,
+    primaryColor,
+    secondaryColor,
+}: AppProps) => {
     /*Will animate the chart upon mounting, 
   uses the percentage parameter to determine the width of the chart*/
     const chart: any = useRef();
@@ -18,10 +26,10 @@ const SkillChart = ({ text, percentage }: AppProps) => {
     useEffect(() => {
         const arrowAnimationTimeline = gsap.timeline();
         arrowAnimationTimeline.to(chart.current, {
-            strokeDashoffset: ((100 - parseInt(percentage)) / 100) * 500,
+            strokeDashoffset: ((100 - percentage) / 100) * 500,
             duration: 5,
         });
-        console.log(faCake.iconName);
+        console.log(icon.iconName);
     });
 
     //Animation upon mouse entering and leaving the chart, also works according to chart appearance as determined by screen size
@@ -32,7 +40,7 @@ const SkillChart = ({ text, percentage }: AppProps) => {
         //on hover i want to make the icon invisible
         if (event.type === "mouseenter") {
             const timeline = gsap.timeline();
-            timeline.to(`.${faCake.iconName}`, {
+            timeline.to(`.${icon.iconName}`, {
                 display: "none",
                 opacity: 0,
                 duration: "instant",
@@ -47,7 +55,7 @@ const SkillChart = ({ text, percentage }: AppProps) => {
             timeline.to(testtext.current, { opacity: "100%", duration: 0.5 });
         } else if (event.type === "mouseleave" || width < 768 || width > 990) {
             const timeline = gsap.timeline();
-            timeline.from(`.${faCake.iconName}`, {
+            timeline.from(`.${icon.iconName}`, {
                 clearProps: "display",
                 duration: "instant",
             });
@@ -55,7 +63,7 @@ const SkillChart = ({ text, percentage }: AppProps) => {
                 clearProps: "all",
                 duration: "instant",
             });
-            timeline.to(`.${faCake.iconName}`, {
+            timeline.to(`.${icon.iconName}`, {
                 opacity: "70%",
                 duration: 0.5,
             });
@@ -71,8 +79,8 @@ const SkillChart = ({ text, percentage }: AppProps) => {
             <div className="skill__outer">
                 <div className="skill__outer__inner">
                     <FontAwesomeIcon
-                        icon={faCake}
-                        className={`skill__outer__inner__icon ${faCake.iconName} `}
+                        icon={icon}
+                        className={`skill__outer__inner__icon ${icon.iconName} `}
                     />
                     <div className="skill__outer__inner__text" ref={testtext}>
                         {text}

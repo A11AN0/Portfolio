@@ -34,8 +34,8 @@ const SkillChart = ({
 
     //Animation upon mouse entering and leaving the chart, also works according to chart appearance as determined by screen size
     const handleChartAppearance = (event: SyntheticEvent) => {
-        const { innerWidth: width } = window;
-        if (width < 768 || width > 991) return;
+        const { innerWidth: width, innerHeight: height } = window;
+        if (width < 768 || width > 991 || height < 650) return;
 
         //on hover i want to make the icon invisible
         if (event.type === "mouseenter") {
@@ -81,6 +81,7 @@ const SkillChart = ({
                     <FontAwesomeIcon
                         icon={icon}
                         className={`skill__outer__inner__icon ${icon.iconName} `}
+                        style={{ color: primaryColor }}
                     />
                     <div className="skill__outer__inner__text" ref={testtext}>
                         {text}

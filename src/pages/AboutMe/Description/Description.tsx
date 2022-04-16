@@ -9,25 +9,42 @@ type AppProps = {
 };
 
 const Description = ({ isNavExtended }: AppProps) => {
+    const handleParagraphSize = (navExtended: boolean) => {
+        if (
+            !(
+                window.innerWidth > 768 &&
+                window.innerWidth < 900 &&
+                window.innerHeight > 590
+            )
+        )
+            return;
+
+        gsap.to(".description__text__paragraph", {
+            fontSize: navExtended ? "2.9vmin" : "3.6vmin",
+            duration: 0.4,
+        });
+    };
+
     //Page width upon nav extension
     useEffect(() => {
         isNavExtended
             ? gsap.to(".description", { marginLeft: "16rem", duration: 0.5 })
             : gsap.to(".description", { marginLeft: "0", duration: 0.5 });
+        handleParagraphSize(isNavExtended);
     }, [isNavExtended]);
 
-    useEffect(() => {
-        //The rising animation for the arrow, will probably change to onhover, and will dissappear when screen is too small
-        const arrowAnimationTimeline = gsap.timeline();
-        arrowAnimationTimeline.to(".description__arrowdown", {
-            y: 35,
-            duration: 1.5,
-        });
-        arrowAnimationTimeline.repeat(-1).yoyo(true).play();
-    }, []);
+    // useEffect(() => {
+    //     //The rising animation for the arrow, will probably change to onhover, and will dissappear when screen is too small
+    //     const arrowAnimationTimeline = gsap.timeline();
+    //     arrowAnimationTimeline.to(".description__arrowdown", {
+    //         y: 35,
+    //         duration: 1.5,
+    //     });
+    //     arrowAnimationTimeline.repeat(-1).yoyo(true).play();
+    // }, []);
 
     //Arrow display upon nav extension
-    const arrowDisplay = isNavExtended ? "none" : "initial";
+    // const arrowDisplay = isNavExtended ? "none" : "initial";
 
     return (
         <div className="description">
@@ -43,11 +60,11 @@ const Description = ({ isNavExtended }: AppProps) => {
                     strive to deliver a polished product for client and
                     corporation alike.
                 </p>
-                <FontAwesomeIcon
+                {/* <FontAwesomeIcon
                     icon={faChevronDown}
                     className="description__arrowdown"
                     style={{ display: arrowDisplay }}
-                />
+                /> */}
             </div>
         </div>
     );

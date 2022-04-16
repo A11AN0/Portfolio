@@ -4,12 +4,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100%;
-    -webkit-backdrop-filter: blur($section-blur);
-    backdrop-filter: blur($section-blur);
+    // -webkit-backdrop-filter: blur($section-blur);
+    // backdrop-filter: blur($section-blur);
+    background-color: bisque;
 
     &__top {
-        height: 8vw;
+        height: $aboutMeTitle-font-size;
         padding: 10px 0 5px 0;
         // background-color: aquamarine;
         width: 100%;
@@ -18,22 +20,29 @@
     &__text {
         line-height: 1.6;
         width: max(80%, 250px);
+        height: calc(100% - (2 * $aboutMeTitle-font-size));
+        background-color: brown;
         padding: 5%;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         &__paragraph {
+            width: 99%;
             font-weight: 300;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 90%;
             font-size: 5vmin;
             padding-bottom: 10px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             font-style: italic;
             text-align: center;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            // -webkit-background-clip: text;
+            // background-clip: text;
             background-image: url("../../../assets/images/rainbow.jpg");
             background-size: cover;
             background-repeat: no-repeat;
@@ -42,18 +51,18 @@
         }
     }
 
-    &__arrowdown {
-        color: white;
-        opacity: 30%;
-        font-size: 11vmin;
-    }
+    // &__arrowdown {
+    //     color: white;
+    //     opacity: 30%;
+    //     font-size: 11vmin;
+    // }
 }
 
 @media screen and (min-width: 300px) {
     .description {
         &__text {
             &__paragraph {
-                font-size: 4vmin;
+                font-size: 4.5vmin;
             }
         }
     }
@@ -63,7 +72,7 @@
     .description {
         &__text {
             &__paragraph {
-                font-size: 3.2vmin;
+                font-size: 3.4vmin;
             }
         }
     }
@@ -73,7 +82,7 @@
     .description {
         &__text {
             &__paragraph {
-                font-size: 3vmin;
+                font-size: 3.2vmin;
             }
         }
     }
@@ -83,7 +92,7 @@
     .description {
         &__text {
             &__paragraph {
-                font-size: 3.3vmin;
+                font-size: 3.4vmin;
             }
         }
     }
@@ -93,7 +102,7 @@
     .description {
         &__text {
             &__paragraph {
-                font-size: 3.6vmin;
+                font-size: 3.5vmin;
             }
         }
     }

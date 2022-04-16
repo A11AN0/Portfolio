@@ -9,14 +9,14 @@
     backdrop-filter: blur($section-blur);
 
     &__top {
-        height: 8vw;
+        height: $aboutMeTitle-font-size;
         padding: 10px 0 5px 0;
         // background-color: aquamarine;
         width: 100%;
     }
 
     &__title {
-        font-size: 4vw;
+        font-size: calc($aboutMeTitle-font-size * 0.5);
         color: $color-title;
         font-weight: 200;
         text-align: center;
@@ -36,7 +36,7 @@
         justify-items: center;
         align-items: center;
         &__icon {
-            font-size: 13vmin;
+            font-size: 11vmin;
             opacity: 0.75;
             display: flex;
             flex-direction: column;
@@ -44,7 +44,7 @@
             align-items: center;
 
             &__text {
-                font-size: 25%;
+                font-size: 27%;
                 margin-top: 5px;
                 color: $color-title;
                 font-weight: 400;
@@ -54,10 +54,55 @@
     }
 }
 
+@media screen and (min-width: 481px) {
+    .tech-stack {
+        &__items {
+            &__icon {
+                &__text {
+                    font-weight: 300;
+                    font-size: 27%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 560px) {
+    .tech-stack {
+        &__items {
+            &__icon {
+                &__text {
+                    font-weight: 300;
+                    font-size: 20%;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     .tech-stack {
         &__items {
             width: 80%;
+            &__icon {
+                font-size: 10vmin;
+                &__text {
+                    font-size: 20%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .tech-stack {
+        &__items {
+            &__icon {
+                font-size: 12vmin;
+                &__text {
+                    font-size: 22%;
+                }
+            }
         }
     }
 }

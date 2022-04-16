@@ -3,15 +3,17 @@
 .about-me {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
     width: 100%;
     scroll-snap-align: start;
     overflow-y: hidden;
     overflow-x: hidden;
     &__title {
+        background-color: aqua;
         z-index: 2;
-        padding: 10px 0 5px 0;
-        font-size: 8vw;
+        padding: 10px 0 2px 0;
+        font-size: $aboutMeTitle-font-size;
         color: $color-title;
         font-weight: 200;
         text-decoration: underline;
@@ -20,6 +22,7 @@
         // background-color: brown;
 
         &__arrow {
+            font-size: calc($aboutMeTitle-font-size * 0.8);
             margin-left: 5%;
             margin-right: 5%;
         }
@@ -67,6 +70,27 @@
                     background-image: url("../../assets/images/ultraviolet.jpg");
                 }
             }
+        }
+    }
+
+    &__arrow-down {
+        z-index: 2;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background-color: aquamarine;
+
+        height: $aboutMeTitle-font-size;
+        visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about-me {
+        &__arrow-down {
+            visibility: visible;
         }
     }
 }

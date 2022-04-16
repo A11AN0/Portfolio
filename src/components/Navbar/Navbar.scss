@@ -13,6 +13,7 @@
     &::-webkit-scrollbar-thumb {
         display: none;
     }
+    cursor: pointer;
 }
 
 .navbar-nav {
@@ -111,7 +112,7 @@
     .navbar {
         bottom: 0;
         width: 100vw;
-        height: 5rem;
+        height: $aboutMeTitle-font-size;
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
 

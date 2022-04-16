@@ -20,8 +20,8 @@ const Description = ({ isNavExtended }: AppProps) => {
             return;
 
         gsap.to(".description__text__paragraph", {
-            fontSize: navExtended ? "2.9vmin" : "3.6vmin",
-            duration: 0.4,
+            fontSize: navExtended ? "2.9vmin" : "inherit",
+            duration: 0.2,
         });
     };
 

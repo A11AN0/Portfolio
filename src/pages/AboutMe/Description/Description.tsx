@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import "./Description.scss";
 import gsap from "gsap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 type AppProps = {
     isNavExtended: boolean;
@@ -33,19 +31,6 @@ const Description = ({ isNavExtended }: AppProps) => {
         handleParagraphSize(isNavExtended);
     }, [isNavExtended]);
 
-    // useEffect(() => {
-    //     //The rising animation for the arrow, will probably change to onhover, and will dissappear when screen is too small
-    //     const arrowAnimationTimeline = gsap.timeline();
-    //     arrowAnimationTimeline.to(".description__arrowdown", {
-    //         y: 35,
-    //         duration: 1.5,
-    //     });
-    //     arrowAnimationTimeline.repeat(-1).yoyo(true).play();
-    // }, []);
-
-    //Arrow display upon nav extension
-    // const arrowDisplay = isNavExtended ? "none" : "initial";
-
     return (
         <div className="description">
             <div className="description__top"></div>
@@ -60,11 +45,6 @@ const Description = ({ isNavExtended }: AppProps) => {
                     strive to deliver a polished product for client and
                     corporation alike.
                 </p>
-                {/* <FontAwesomeIcon
-                    icon={faChevronDown}
-                    className="description__arrowdown"
-                    style={{ display: arrowDisplay }}
-                /> */}
             </div>
         </div>
     );

@@ -10,7 +10,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
     &__title {
-        background-color: aqua;
+        // background-color: aqua;
         z-index: 2;
         padding: 10px 0 2px 0;
         font-size: $aboutMeTitle-font-size;
@@ -23,6 +23,7 @@
 
         &__arrow {
             font-size: calc($aboutMeTitle-font-size * 0.8);
+            opacity: 40%;
             margin-left: 5%;
             margin-right: 5%;
         }
@@ -77,13 +78,33 @@
         z-index: 2;
         overflow-y: hidden;
         overflow-x: hidden;
-        background-color: aquamarine;
+        // background-color: black;
 
         height: $aboutMeTitle-font-size;
         visibility: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &__svg {
+            cursor: pointer;
+            color: white;
+            opacity: 20%;
+            font-size: 10vmin;
+            margin-bottom: 2%;
+        }
+
+        &__prompt {
+            // background-color: blue;
+            cursor: pointer;
+            padding-top: calc($aboutMeTitle-font-size * 0.5);
+            display: none;
+            color: white;
+            opacity: 0%;
+            font-size: 4vmin;
+            font-weight: 200;
+            height: 100%;
+        }
     }
 }
 

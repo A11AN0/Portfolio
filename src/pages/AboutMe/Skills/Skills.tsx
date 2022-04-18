@@ -40,6 +40,7 @@ const Skills = ({ isNavExtended, setElementInViewPort }: AppProps) => {
                 percentage={experience.percentage}
                 primaryColor={experience.primaryColor}
                 secondaryColor={experience.secondaryColor}
+                isNavExtended={isNavExtended}
             />
         ));
     };

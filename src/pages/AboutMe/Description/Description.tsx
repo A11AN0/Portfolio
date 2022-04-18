@@ -1,12 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Description.scss";
 import gsap from "gsap";
+import { useInViewport } from "react-in-viewport";
 
 type AppProps = {
     isNavExtended: boolean;
+    setElementInViewPort: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Description = ({ isNavExtended }: AppProps) => {
+const Description = ({ isNavExtended, setElementInViewPort }: AppProps) => {
+    /*XXXXXXXXX Procedure to detect if element is in viewport XXXXXXXXX, 
+    
+    Will do something when it detects that the element is in viewport,
+    can be more recyclable after refactoring, after defining a ref, simply assign an component/div etc the ref of anchor, which will
+    be used to determine whether or not the component is in the viewport*/
+
+    const viewPortAnchor: any = useRef();
+    const { inViewport } = useInViewport(viewPortAnchor);
+    useEffect(() => {
+        if (!inViewport) return;
+        setElementInViewPort("description");
+    }, [inViewport, setElementInViewPort]);
+
+    //Procedure to handle the size of the paragraph when nav is extended
     const handleParagraphSize = (navExtended: boolean) => {
         if (
             !(
@@ -40,7 +56,7 @@ const Description = ({ isNavExtended }: AppProps) => {
                     for creating beautiful, intuitive, and responsive user
                     experiences, while meeting the functional demands of an
                     application on the serverside.
-                    <br /> <br />
+                    <br ref={viewPortAnchor} /> <br />
                     Highly driven, adaptable, personable and team-oriented. I
                     strive to deliver a polished product for client and
                     corporation alike.

@@ -28,7 +28,7 @@ const Intro = (props: any) => {
         const arrowAnimationTimeline = gsap.timeline();
         arrowAnimationTimeline.delay(2);
         arrowAnimationTimeline.to(".intro__title__arrow", {
-            y: 50,
+            y: 30,
             duration: 1.5,
         });
         arrowAnimationTimeline.repeat(-1).yoyo(true).play();

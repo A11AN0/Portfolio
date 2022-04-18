@@ -29,7 +29,6 @@ const SkillChart = ({
             strokeDashoffset: ((100 - percentage) / 100) * 500,
             duration: 10,
         });
-        console.log(icon.iconName);
     });
 
     //Animation upon mouse entering and leaving the chart, also works according to chart appearance as determined by screen size

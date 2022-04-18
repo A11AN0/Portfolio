@@ -10,22 +10,34 @@
     overflow-y: hidden;
     overflow-x: hidden;
     &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         // background-color: aqua;
         z-index: 2;
         padding: 10px 0 2px 0;
         font-size: $aboutMeTitle-font-size;
         color: $color-title;
         font-weight: 200;
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
         text-align: center;
         // background-color: brown;
 
+        &__main {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+        }
+
         &__arrow {
             font-size: calc($aboutMeTitle-font-size * 0.8);
-            opacity: 40%;
+            opacity: 20%;
             margin-left: 5%;
             margin-right: 5%;
+        }
+
+        &__prompt {
+            text-decoration-thickness: 0px;
+            font-size: calc($aboutMeTitle-font-size * 0.5);
+            opacity: 40%;
         }
     }
 

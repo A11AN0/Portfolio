@@ -101,7 +101,8 @@ const SkillChart = ({
                         className={
                             isNavExtended &&
                             window.innerWidth <= maxWidthToOccur &&
-                            window.innerWidth > 1081
+                            window.innerWidth > 1081 &&
+                            window.innerHeight > 650
                                 ? "skill__outer__inner__textHidden"
                                 : "skill__outer__inner__text"
                         }

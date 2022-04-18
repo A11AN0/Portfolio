@@ -9,6 +9,7 @@ type AppProps = {
     icon: any;
     primaryColor: string;
     secondaryColor: string;
+    isNavExtended: boolean;
 };
 
 const SkillChart = ({
@@ -17,6 +18,7 @@ const SkillChart = ({
     icon,
     primaryColor,
     secondaryColor,
+    isNavExtended,
 }: AppProps) => {
     /*Will animate the chart upon mounting, 
   uses the percentage parameter to determine the width of the chart*/
@@ -32,9 +34,18 @@ const SkillChart = ({
     });
 
     //Animation upon mouse entering and leaving the chart, also works according to chart appearance as determined by screen size
+    const maxWidthToOccur = 1500; //simply adjust THIS value to set the upper limit of the range between which handleChartAppearance will be called
     const handleChartAppearance = (event: SyntheticEvent) => {
         const { innerWidth: width, innerHeight: height } = window;
-        if (width < 768 || width > 991 || height < 650) return;
+        /*adjust widths (3000px/1081px to determine the range between which the experience labels will disappear when nav is extended )
+        modified skillchart functionality so that, labels/text will still appear within the experience circle when the element is clicked (on tablet
+            or hovered over on computer/laptop) */
+        if (
+            width < 768 ||
+            width > (isNavExtended ? maxWidthToOccur : 1081) ||
+            height < 650
+        )
+            return;
 
         //on hover i want to make the icon invisible
         if (event.type === "mouseenter") {
@@ -52,7 +63,11 @@ const SkillChart = ({
                 duration: "instant",
             });
             timeline.to(testtext.current, { opacity: "100%", duration: 0.5 });
-        } else if (event.type === "mouseleave" || width < 768 || width > 990) {
+        } else if (
+            event.type === "mouseleave" ||
+            width < 768 ||
+            width > (isNavExtended ? maxWidthToOccur : 1081)
+        ) {
             const timeline = gsap.timeline();
             timeline.from(`.${icon.iconName}`, {
                 clearProps: "display",
@@ -82,7 +97,16 @@ const SkillChart = ({
                         className={`skill__outer__inner__icon ${icon.iconName} `}
                         style={{ color: primaryColor }}
                     />
-                    <div className="skill__outer__inner__text" ref={testtext}>
+                    <div
+                        className={
+                            isNavExtended &&
+                            window.innerWidth <= maxWidthToOccur &&
+                            window.innerWidth > 1081
+                                ? "skill__outer__inner__textHidden"
+                                : "skill__outer__inner__text"
+                        }
+                        ref={testtext}
+                    >
                         {text}
                     </div>
                 </div>

@@ -129,41 +129,31 @@
     }
 }
 
-@media screen and (min-width: 991px) and (min-height: 650px) {
+@media screen and (min-width: 1081px) and (min-height: 650px) {
     .skill {
         &__outer {
             &__inner {
                 cursor: initial;
                 &__text {
+                    left: 21vmin;
                     opacity: 100%;
                     font-weight: 200;
-                    font-size: 2.4vmin;
+                    font-size: 2.8vmin;
                     display: initial;
                 }
-            }
-        }
-    }
-}
 
-@media screen and (min-width: 1081px) and (min-height: 650px) {
-    .skill {
-        &__outer {
-            &__inner {
-                &__text {
-                    font-size: 2.1vmin;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 1200px) and (min-height: 650px) {
-    .skill {
-        &__outer {
-            &__inner {
-                &__text {
+                &__textHidden {
+                    opacity: 0;
+                    width: 70%;
+                    display: none;
+                    position: absolute;
+                    // text-transform: uppercase;
+                    // font-style: italic;
+                    left: 20vmin;
+                    top: initial;
+                    color: white;
                     font-weight: 200;
-                    font-size: 2.8vmin;
+                    font-size: 2.3vmin;
                 }
             }
         }

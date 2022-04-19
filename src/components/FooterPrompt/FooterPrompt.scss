@@ -1,0 +1,42 @@
+@import "../../assets/styles/styles.scss";
+
+.footer-prompt {
+    z-index: 2;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: black;
+
+    height: $aboutMeTitle-font-size;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__downward-arrow {
+        cursor: pointer;
+        color: white;
+        opacity: 20%;
+        font-size: 10vmin;
+        margin-bottom: 2%;
+    }
+
+    &__text {
+        // background-color: blue;
+        cursor: pointer;
+        padding-top: calc($aboutMeTitle-font-size * 0.5);
+        display: none;
+        color: white;
+        opacity: 0%;
+        font-size: 4vmin;
+        font-weight: 200;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer-prompt {
+        &__downward-arrow {
+            visibility: visible;
+        }
+    }
+}

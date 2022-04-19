@@ -3,6 +3,7 @@ import "./Intro.scss";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import Tilt from "react-parallax-tilt";
 
 //will need to change this to a stateful component and remove the use of any
 const Intro = (props: any) => {
@@ -44,12 +45,19 @@ const Intro = (props: any) => {
 
     return (
         <div className="intro" id="allan">
-            <div className="intro__title" ref={container}>
-                <p ref={title}>Hello, I'm Allan.</p>
-                <FontAwesomeIcon
-                    icon={faChevronDown}
-                    className="intro__title__arrow"
-                />
+            <div
+                className="intro__title"
+                ref={container}
+                style={{ lineHeight: isNavExtended ? "1em" : "0.55em" }}
+            >
+                <Tilt transitionSpeed={2000}>
+                    <p ref={title}>Hello, I'm Allan.</p>
+
+                    <FontAwesomeIcon
+                        icon={faChevronDown}
+                        className="intro__title__arrow"
+                    />
+                </Tilt>
             </div>
         </div>
     );

@@ -16,13 +16,13 @@
     background-attachment: fixed;
 
     &__title {
+        cursor: pointer;
         margin-top: 10%;
         font-size: 11vw;
         color: $color-title;
         opacity: 85%;
         font-weight: 200;
         text-align: center;
-        line-height: 0.55em;
 
         &__arrow {
             opacity: 0;

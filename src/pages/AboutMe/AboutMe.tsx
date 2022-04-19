@@ -1,11 +1,10 @@
-import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./AboutMe.scss";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faChevronRight,
     faChevronLeft,
-    faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import Description from "./Description/Description";
 import TechStack from "./TechStack/TechStack";
@@ -16,7 +15,6 @@ type AppProps = {
     isNavExtended: boolean;
 };
 
-const generateBlank = "  ";
 const AboutMe = ({ isNavExtended }: AppProps) => {
     //Procedure for setting the titles in the arrow prompt for each section
     const [elementInViewPort, setElementInViewPort] = useState("description"); //will alert the user when the element is in viewport

@@ -1,41 +1,31 @@
-import React from 'react';
-import './MyProjects.scss';
+import React, { useEffect } from "react";
+import FooterPrompt from "../../components/FooterPrompt/FooterPrompt";
+import "./MyProjects.scss";
+import gsap from "gsap";
 
-const MyProjects = (props:any) => {
-  return (
-    <section className="my-projects" id="projects">
-            <h1 className="my-projects__title" >
-                My Projects.
-            </h1>
-            <div className="my-projects__h-container">
-              <div className="my-projects__h-container__column">
-                <div className="my-projects__h-container__column__project-box"></div>
-                <div className="my-projects__h-container__column__project-box"></div>
-              </div>
+type AppProps = {
+    isNavExtended: boolean;
+};
 
-              <div className="my-projects__h-container__column">
-                <div className="my-projects__h-container__column__project-box"></div>
-                <div className="my-projects__h-container__column__project-box"></div>
-              </div>
+const MyProjects = ({ isNavExtended }: AppProps) => {
+    useEffect(() => {
+        isNavExtended
+            ? gsap.to(".my-projects__title", {
+                  marginLeft: "16rem",
+                  duration: 0.5,
+              })
+            : gsap.to(".my-projects__title", {
+                  marginLeft: "0",
+                  duration: 0.5,
+              });
+    }, [isNavExtended]);
 
-              <div className="my-projects__h-container__column">
-                <div className="my-projects__h-container__column__project-box"></div>
-                <div className="my-projects__h-container__column__project-box"></div>
-              </div>
+    return (
+        <section className="my-projects" id="projects">
+            <h1 className="my-projects__title">My Projects.</h1>
+            <FooterPrompt isNavExtended={isNavExtended} prompt="Contact Me" />
+        </section>
+    );
+};
 
-              <div className="my-projects__h-container__column">
-                <div className="my-projects__h-container__column__project-box"></div>
-                <div className="my-projects__h-container__column__project-box"></div>
-              </div>
-              
-              <div className="my-projects__h-container__column">
-                <div className="my-projects__h-container__column__project-box"></div>
-                <div className="my-projects__h-container__column__project-box"></div>
-              </div>  
-      </div>
-
-      </section>
-  )
-}
-
-export default MyProjects
+export default MyProjects;

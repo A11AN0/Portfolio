@@ -23,4 +23,61 @@
         text-decoration: underline;
         text-decoration-thickness: 1px;
     }
+
+    &__contents {
+        // position: absolute;
+        margin: 0;
+        z-index: 1;
+        width: 100%;
+        height: calc(100vh - ($aboutMeTitle-font-size * 2));
+        background-color: aqua;
+        opacity: 50%;
+        overflow: hidden;
+
+        &__h-container {
+            margin-bottom: 100px;
+            height: 98%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            overflow-y: hidden;
+            overflow-x: auto;
+            align-items: center;
+            border-radius: 10px;
+            z-index: 1;
+            scroll-snap-type: x mandatory;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: white dashed 5px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                display: none;
+            }
+
+            &__column {
+                height: 100%;
+                line-height: 2em;
+                width: 25%;
+                flex-shrink: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                scroll-snap-align: start;
+                align-items: center;
+                justify-items: center;
+
+                &__project-box {
+                    background-color: $color-title;
+                    width: 250px;
+                    height: 230px;
+                    //this margin left only when nav is not extended and above 768px
+                    margin-left: calc($navBar-width * 0.3);
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
 }

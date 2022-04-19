@@ -10,11 +10,11 @@ type AppProps = {
 const MyProjects = ({ isNavExtended }: AppProps) => {
     useEffect(() => {
         isNavExtended
-            ? gsap.to(".my-projects__title", {
+            ? gsap.to(".my-projects__shift", {
                   marginLeft: "16rem",
                   duration: 0.5,
               })
-            : gsap.to(".my-projects__title", {
+            : gsap.to(".my-projects__shift", {
                   marginLeft: "0",
                   duration: 0.5,
               });
@@ -22,7 +22,37 @@ const MyProjects = ({ isNavExtended }: AppProps) => {
 
     return (
         <section className="my-projects" id="projects">
-            <h1 className="my-projects__title">My Projects.</h1>
+            <h1 className="my-projects__title my-projects__shift">
+                My Projects.
+            </h1>
+            <div className="my-projects__contents">
+                <div className="my-projects__contents__h-container my-projects__shift">
+                    <div className="my-projects__contents__h-container__column">
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                    </div>
+
+                    <div className="my-projects__contents__h-container__column">
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                    </div>
+
+                    <div className="my-projects__contents__h-container__column">
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                    </div>
+
+                    <div className="my-projects__contents__h-container__column">
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                    </div>
+
+                    <div className="my-projects__contents__h-container__column">
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                        <div className="my-projects__contents__h-container__column__project-box"></div>
+                    </div>
+                </div>
+            </div>
             <FooterPrompt isNavExtended={isNavExtended} prompt="Contact Me" />
         </section>
     );

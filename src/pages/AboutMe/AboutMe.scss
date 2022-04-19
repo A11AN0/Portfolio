@@ -85,45 +85,4 @@
             }
         }
     }
-
-    &__arrow-down {
-        z-index: 2;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        // background-color: black;
-
-        height: $aboutMeTitle-font-size;
-        visibility: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &__svg {
-            cursor: pointer;
-            color: white;
-            opacity: 20%;
-            font-size: 10vmin;
-            margin-bottom: 2%;
-        }
-
-        &__prompt {
-            // background-color: blue;
-            cursor: pointer;
-            padding-top: calc($aboutMeTitle-font-size * 0.5);
-            display: none;
-            color: white;
-            opacity: 0%;
-            font-size: 4vmin;
-            font-weight: 200;
-            height: 100%;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .about-me {
-        &__arrow-down {
-            visibility: visible;
-        }
-    }
 }

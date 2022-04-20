@@ -1,0 +1,19 @@
+@import "../../../assets/styles/styles.scss";
+
+.projectCard {
+    transition: 200ms;
+    background-color: $color-title;
+    border: 1px black solid;
+    width: 250px;
+    height: 230px;
+    //this margin left only when nav is not extended and above 768px
+    //will need to turn off margin-left when nav is extended
+
+    border-radius: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .projectCard {
+        margin-left: calc($navBar-width * 0.3);
+    }
+}

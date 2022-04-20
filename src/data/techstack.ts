@@ -15,13 +15,13 @@ import {
     faDatabase,
 } from "@fortawesome/free-solid-svg-icons";
 
-type techData = {
+type TechData = {
     techName: string;
     icon: any;
     color: string;
 };
 
-const techStackData: techData[] = [
+const techStackData: TechData[] = [
     {
         techName: "JavaScript & TypeScript",
         icon: faJsSquare,

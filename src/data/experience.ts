@@ -10,7 +10,7 @@ import {
     faParagraph,
 } from "@fortawesome/free-solid-svg-icons";
 
-type experienceData = {
+type ExperienceData = {
     experience: string;
     icon: any;
     primaryColor: string;
@@ -18,7 +18,7 @@ type experienceData = {
     percentage: number;
 };
 
-const experienceListData: experienceData[] = [
+const experienceListData: ExperienceData[] = [
     {
         experience: "Agile Scrum Methodology",
         icon: faMeteor,

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import FooterPrompt from "../../components/FooterPrompt/FooterPrompt";
 import "./MyProjects.scss";
 import gsap from "gsap";
+import ProjectGenerator from "./ProjectGenerator";
 
 type AppProps = {
     isNavExtended: boolean;
@@ -27,30 +28,7 @@ const MyProjects = ({ isNavExtended }: AppProps) => {
             </h1>
             <div className="my-projects__contents">
                 <div className="my-projects__contents__h-container my-projects__shift">
-                    <div className="my-projects__contents__h-container__column">
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                    </div>
-
-                    <div className="my-projects__contents__h-container__column">
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                    </div>
-
-                    <div className="my-projects__contents__h-container__column">
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                    </div>
-
-                    <div className="my-projects__contents__h-container__column">
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                    </div>
-
-                    <div className="my-projects__contents__h-container__column">
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                        <div className="my-projects__contents__h-container__column__project-box"></div>
-                    </div>
+                    <ProjectGenerator isNavExtended={isNavExtended} />
                 </div>
             </div>
             <FooterPrompt isNavExtended={isNavExtended} prompt="Contact Me" />

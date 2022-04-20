@@ -1,0 +1,31 @@
+@import "../../../assets/styles/styles.scss";
+
+.projectGenerator-column {
+    height: 100%;
+    line-height: 2em;
+    width: 100%;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    scroll-snap-align: start;
+    align-items: center;
+    justify-items: center;
+}
+
+@media screen and (min-width: 550px) {
+    .projectGenerator-column {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .projectGenerator-column {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .projectGenerator-column {
+        width: 25%;
+    }
+}

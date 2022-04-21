@@ -30,8 +30,8 @@
         z-index: 1;
         width: 100%;
         height: calc(100vh - ($aboutMeTitle-font-size * 2));
-        background-color: aqua;
-        opacity: 50%;
+        // background-color: aqua;
+        // opacity: 50%;
         overflow: hidden;
 
         &__h-container {
@@ -46,8 +46,8 @@
             border-radius: 10px;
             z-index: 1;
             scroll-snap-type: x mandatory;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            // -webkit-backdrop-filter: blur(10px);
+            // backdrop-filter: blur(10px);
 
             &::-webkit-scrollbar {
                 display: none;

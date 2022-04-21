@@ -1,15 +1,87 @@
 @import "../../../assets/styles/styles.scss";
 
 .projectCard {
+    cursor: pointer;
     transition: 200ms;
     background-color: $color-title;
-    border: 1px black solid;
+    // border: 1px black solid;
     width: 250px;
     height: 230px;
-    //this margin left only when nav is not extended and above 768px
-    //will need to turn off margin-left when nav is extended
-
     border-radius: 15px;
+    display: flex;
+    //Testing the styling and stuff
+    background-image: url("../../../assets/images/Snake.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+        &__title {
+            font-size: 40px;
+            color: black;
+            font-weight: 300;
+            width: 100%;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            // background-color: red;
+        }
+
+        &__description {
+            padding-top: 10px;
+            padding-bottom: 5px;
+            overflow: hidden;
+            height: 100px;
+            font-style: italic;
+            width: 90%;
+            padding-left: 5px;
+            background-color: aqua;
+            font-size: 15px;
+            line-height: 1.5em;
+            font-weight: 200;
+            text-align: center;
+        }
+
+        &__links {
+            background-color: brown;
+            opacity: 50%;
+            width: 230px;
+            height: 70px;
+            overflow: hidden;
+            display: flex;
+
+            &__item {
+                width: 50%;
+                display: grid;
+                justify-items: center;
+                align-items: center;
+                font-size: 50px;
+                line-height: 0.4em;
+
+                &__text {
+                    font-size: 12px;
+                    align-self: flex-end;
+                }
+            }
+        }
+
+        &__tools {
+            position: relative;
+            width: 20%;
+            // background-color: pink;
+            color: white;
+            display: grid;
+            height: 80%;
+            bottom: 190px;
+            left: 235px;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            font-size: 35px;
+        }
+    }
 }
 
 @media screen and (min-width: 768px) {

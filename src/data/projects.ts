@@ -4,31 +4,31 @@ export type ProjectData = {
 
 const projectListData: ProjectData[] = [
     {
-        projectName: "1",
+        projectName: "Snake",
     },
     {
-        projectName: "2",
+        projectName: "Calculator",
     },
     {
-        projectName: "3",
+        projectName: "Six-Pack",
     },
     {
-        projectName: "4",
+        projectName: "PDfusion",
     },
     {
-        projectName: "5",
+        projectName: "Hostile Aliens",
     },
     {
-        projectName: "6",
+        projectName: "Translate",
     },
     {
-        projectName: "7",
+        projectName: "Celestial",
     },
     {
-        projectName: "8",
+        projectName: "Note-ify",
     },
     {
-        projectName: "9",
+        projectName: "Orb",
     },
 ];
 

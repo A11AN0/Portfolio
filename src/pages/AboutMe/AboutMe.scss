@@ -28,16 +28,18 @@
         }
 
         &__arrow {
-            font-size: calc($aboutMeTitle-font-size * 0.8);
+            cursor: pointer;
+            font-size: calc($aboutMeTitle-font-size * 0.7);
             opacity: 20%;
-            margin-left: 5%;
-            margin-right: 5%;
+            margin-left: 2%;
+            margin-right: 2%;
         }
 
         &__prompt {
+            white-space: nowrap;
             text-decoration-thickness: 0px;
-            font-size: calc($aboutMeTitle-font-size * 0.5);
-            opacity: 40%;
+            font-size: calc($aboutMeTitle-font-size * 0.2);
+            opacity: 20%;
         }
     }
 
@@ -82,6 +84,26 @@
                     // background-color: red;
                     background-image: url("../../assets/images/ultraviolet.jpg");
                 }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about-me {
+        &__title {
+            &__prompt {
+                font-size: calc($aboutMeTitle-font-size * 0.2);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .about-me {
+        &__title {
+            &__prompt {
+                font-size: calc($aboutMeTitle-font-size * 0.5);
             }
         }
     }

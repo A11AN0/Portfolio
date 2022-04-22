@@ -86,8 +86,21 @@ const FooterPrompt = ({ prompt, isNavExtended }: AppProps) => {
         animateArrow();
     }, []);
 
+    //Scroll animation
+    const scrollDown = () => {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: "smooth",
+        });
+    };
+
     return (
-        <footer className="footer-prompt">
+        <footer
+            className="footer-prompt"
+            onClick={() => {
+                scrollDown();
+            }}
+        >
             <FontAwesomeIcon
                 onMouseEnter={handlePrompt}
                 icon={faChevronDown}

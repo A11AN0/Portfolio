@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
 import "./AboutMe.scss";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -91,6 +91,30 @@ const AboutMe = ({ isNavExtended }: AppProps) => {
         scrollContainer.current.scrollTo(window.innerWidth, 0);
     }, []);
 
+    //Procedure to highlight prompt arrow and word upon hovering
+    const animateArrow = (promptDirection: string, event: SyntheticEvent) => {
+        const action = event.type;
+        const timeline = gsap.timeline();
+        timeline.to(`.about-me__title__arrow--${promptDirection}`, {
+            opacity: action === "mouseenter" ? 1 : 0.2,
+            duration: 0.1,
+        });
+        timeline.to(`.about-me__title__prompt--${promptDirection}`, {
+            opacity: action === "mouseenter" ? 1 : 0.2,
+            duration: 0.5,
+        });
+    };
+
+    //Scroll animation
+    const scroll = (promptPosition: string) => {
+        const amount =
+            promptPosition === "left" ? -window.innerWidth : window.innerWidth;
+        scrollContainer.current.scrollBy({
+            left: amount,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <section className="about-me" id="about">
             <div className="about-me__title about-me__shiftingElement ">
@@ -102,16 +126,27 @@ const AboutMe = ({ isNavExtended }: AppProps) => {
                         ? "Experience"
                         : "In a Nutshell"}
                 </p>
+                {/* need to first, animate arrow and prompt on click, and then animate window scroll.to, smooth scroll */}
                 <FontAwesomeIcon
                     icon={faChevronLeft}
                     className="about-me__title__arrow about-me__title__arrow--left"
                     style={{ display: isNavExtended ? "none" : "initial" }}
+                    onMouseEnter={(event) => animateArrow("left", event)}
+                    onMouseLeave={(event) => animateArrow("left", event)}
+                    onClick={() => {
+                        scroll("left");
+                    }}
                 />
                 <p className="about-me__title__main">About Me.</p>
                 <FontAwesomeIcon
                     icon={faChevronRight}
                     className="about-me__title__arrow about-me__title__arrow--right"
                     style={{ display: isNavExtended ? "none" : "initial" }}
+                    onMouseEnter={(event) => animateArrow("right", event)}
+                    onMouseLeave={(event) => animateArrow("right", event)}
+                    onClick={() => {
+                        scroll("right");
+                    }}
                 />
                 <p
                     className="about-me__title__prompt about-me__title__prompt--right "

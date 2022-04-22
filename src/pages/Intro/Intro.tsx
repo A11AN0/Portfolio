@@ -43,6 +43,14 @@ const Intro = (props: any) => {
             : gsap.to(container.current, { marginLeft: "0", duration: 0.5 });
     }, [isNavExtended]);
 
+    //Scroll animation
+    const scrollDown = () => {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <div className="intro" id="allan">
             <div
@@ -56,6 +64,9 @@ const Intro = (props: any) => {
                     <FontAwesomeIcon
                         icon={faChevronDown}
                         className="intro__title__arrow"
+                        onClick={() => {
+                            scrollDown();
+                        }}
                     />
                 </Tilt>
             </div>

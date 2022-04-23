@@ -15,7 +15,7 @@ import {
     faDatabase,
 } from "@fortawesome/free-solid-svg-icons";
 
-type TechData = {
+export type TechData = {
     techName: string;
     icon: any;
     color: string;

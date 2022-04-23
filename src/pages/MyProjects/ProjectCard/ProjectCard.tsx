@@ -3,13 +3,7 @@ import "./ProjectCard.scss";
 import { ProjectData } from "./../../../data/projects";
 import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faJsSquare,
-    faHtml5,
-    faPython,
-    faGithubSquare,
-    faReact,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkSquare } from "@fortawesome/free-solid-svg-icons";
 import Tilt from "react-parallax-tilt";
 
@@ -34,7 +28,7 @@ const ProjectCard = ({ project, blank, isNavExtended }: AppProps) => {
     const [isHovered, setIsHovered] = useState(false);
 
     //Procedure to animate the project card when hovered
-    const specificClassName = project?.projectName.replace(/\s/g, "");
+    const specificClassName = project?.name.replace(/\s/g, "");
     const animateHover = (event: string) => {
         const hoverTimeline = gsap.timeline();
 
@@ -52,6 +46,60 @@ const ProjectCard = ({ project, blank, isNavExtended }: AppProps) => {
         animateHover(action);
     };
 
+    //Function to generate project tech-stack list items
+    const generateTechStack = () => {
+        const techList = project?.techStack;
+        return techList?.map((tech) => (
+            <FontAwesomeIcon icon={tech.icon} style={{ color: tech.color }} />
+        ));
+    };
+
+    //Function to generate project links
+    const generateCodeBaseLink = () => {
+        if (project?.codeBaseLink.length === 0) return;
+        return (
+            <div className="projectCard__container__info__links__item">
+                <a
+                    href={project?.codeBaseLink}
+                    target="_blank"
+                    className="projectLink"
+                    rel="noreferrer"
+                >
+                    <FontAwesomeIcon
+                        className="projectCard__container__info__links__item__svg"
+                        icon={faGithubSquare}
+                    />
+                </a>
+                <p className="projectCard__container__info__links__item__text">
+                    Codebase
+                </p>
+            </div>
+        );
+    };
+
+    const generateLiveSiteLink = () => {
+        if (project?.liveSiteLink.length === 0) return;
+        return (
+            <div className="projectCard__container__info__links__item">
+                <a
+                    href={project?.liveSiteLink}
+                    target="_blank"
+                    className="projectLink"
+                    rel="noreferrer"
+                >
+                    <FontAwesomeIcon
+                        className="projectCard__container__info__links__item__svg"
+                        icon={faExternalLinkSquare}
+                    />
+                </a>
+
+                <p className="projectCard__container__info__links__item__text">
+                    Site
+                </p>
+            </div>
+        );
+    };
+
     return blank ? (
         <div className="projectCard"></div>
     ) : (
@@ -61,62 +109,38 @@ const ProjectCard = ({ project, blank, isNavExtended }: AppProps) => {
                 onMouseEnter={handleCardHover}
                 onMouseLeave={handleCardHover}
             >
+                <img
+                    src={project?.backgroundUrl}
+                    alt={project?.name}
+                    style={{
+                        position: "absolute",
+                        height: "230px",
+                        width: "250px",
+                        zIndex: "-1",
+                        borderRadius: "15px",
+                    }}
+                />
                 <div
                     className={`projectCard__container ${
                         isHovered && `projectCard__container--hovered`
                     }`}
                 >
                     <p className="projectCard__container__title">
-                        {project!.projectName}
+                        {project!.name}
                     </p>
+
                     <div
                         className={`projectCard__container__info ${specificClassName}`}
                     >
                         <p className="projectCard__container__info__description">
-                            A good-old, classic, browser run game of snake made
-                            with vanilla Javascript jndsjfdkfjn
-                            hfbsjnskjfnfjnfnjn
+                            {project!.description}
                         </p>
                         <div className="projectCard__container__info__links">
-                            <div className="projectCard__container__info__links__item">
-                                <FontAwesomeIcon
-                                    className="projectCard__container__info__links__item__svg"
-                                    icon={faGithubSquare}
-                                />
-                                <p className="projectCard__container__info__links__item__text">
-                                    Codebase
-                                </p>
-                            </div>
-                            <div className="projectCard__container__info__links__item">
-                                <FontAwesomeIcon
-                                    className="projectCard__container__info__links__item__svg"
-                                    icon={faExternalLinkSquare}
-                                />
-                                <p className="projectCard__container__info__links__item__text">
-                                    Site
-                                </p>
-                            </div>
+                            {generateCodeBaseLink()}
+                            {generateLiveSiteLink()}
                         </div>
                         <div className="projectCard__container__info__tools">
-                            <FontAwesomeIcon
-                                icon={faJsSquare}
-                                style={{ color: "#fbff26" }}
-                            />
-
-                            <FontAwesomeIcon
-                                icon={faHtml5}
-                                style={{ color: "#ff6e26" }}
-                            />
-
-                            <FontAwesomeIcon
-                                icon={faPython}
-                                style={{ color: "#7bff00" }}
-                            />
-
-                            <FontAwesomeIcon
-                                icon={faReact}
-                                style={{ color: "#1fd2ff" }}
-                            />
+                            {generateTechStack()}
                         </div>
                     </div>
                 </div>

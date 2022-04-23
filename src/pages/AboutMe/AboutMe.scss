@@ -53,6 +53,14 @@
         overflow-y: hidden;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
+        -webkit-scroll-snap-type: x mandatory;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            display: none;
+        }
 
         &__carousel {
             display: flex;
@@ -71,7 +79,7 @@
                 background-attachment: fixed;
 
                 &--skills {
-                    // background-color: brown;
+                    // background-color: brown; //css struggling to render background image, hence the glitching
                     background-image: url("../../assets/images/blackblu.jpg");
                 }
 

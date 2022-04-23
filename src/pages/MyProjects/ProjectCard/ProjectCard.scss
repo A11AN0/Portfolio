@@ -11,7 +11,7 @@
     border: 0.25px solid rgba(0, 0, 0, 0.377);
     display: flex;
     //Testing the styling and stuff
-    background-image: url("../../../assets/images/Snake.png");
+    // background-image: url("../../../assets/images/Snake.png");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -53,9 +53,9 @@
                 width: 90%;
                 padding-left: 5px;
                 // background-color: aqua;
-                font-size: 15px;
+                font-size: 14px;
                 line-height: 1.5em;
-                font-weight: 400;
+                font-weight: 300;
                 text-align: center;
             }
 
@@ -84,6 +84,7 @@
                     }
 
                     &__text {
+                        pointer-events: none;
                         font-size: 12px;
                         align-self: flex-end;
                     }
@@ -110,4 +111,23 @@
     .projectCard {
         margin-left: calc($navBar-width * 0.3);
     }
+}
+
+.projectLink {
+    transition: 200ms;
+    color: black;
+    text-decoration: none;
+}
+
+.projectLink:hover {
+    transition: 200ms;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.projectLink:visited {
+    transition: 200ms;
+    color: inherit;
+    cursor: pointer;
 }

@@ -34,7 +34,9 @@
         align-items: center;
 
         &__portrait {
-            background-color: aqua;
+            // background-color: aqua;
+            background-image: url(https://media-exp1.licdn.com/dms/image/C5603AQFBpHY5KyN01w/profile-displayphoto-shrink_800_800/0/1644245489370?e=1655942400&v=beta&t=MoNSUjr__ovUX4dl2v7Lv71S2f2ydmIhHVgdisyiyVk);
+            background-size: contain;
             width: 20vmin;
             height: 20vmin;
             border-radius: 100%;

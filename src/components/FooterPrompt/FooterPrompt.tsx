@@ -35,7 +35,7 @@ const FooterPrompt = ({ prompt, isNavExtended }: AppProps) => {
                 duration: "instant",
             });
             timeline.to(".footer-prompt__text", {
-                opacity: 0.4,
+                opacity: 0.7,
                 duration: 0.2,
             });
         } else {

@@ -1,3 +1,33 @@
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: none;
+    scrollbar-color: #ffffff00 #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #302f2f;
+    border-radius: 0px;
+    border: 0px none #000000;
+}
+
+html {
+    cursor: pointer;
+}
+
+body {
+    cursor: default;
+}
+
 main {
     // scroll-snap-type: y mandatory;
     scroll-behavior: smooth;

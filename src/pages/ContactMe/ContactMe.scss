@@ -63,6 +63,14 @@
             padding-top: 4%;
             width: 65%;
             color: white;
+
+            &__link {
+                transition: 400ms;
+                &:hover {
+                    transform: scale(1.2);
+                    transition: 400ms;
+                }
+            }
         }
     }
 }

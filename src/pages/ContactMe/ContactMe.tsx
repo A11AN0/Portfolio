@@ -17,9 +17,30 @@ const ContactMe = (props: any) => {
                     back..end, <u>let's work together</u>"
                 </div>
                 <div className="contact-me__content__symbol-container">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                    <FontAwesomeIcon icon={faGithub} />
-                    <FontAwesomeIcon icon={faEnvelope} />
+                    <a
+                        href="https://www.linkedin.com/in/allan-odunga-309710212/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="contact-me__content__symbol-container__link"
+                    >
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                    <a
+                        href="https://github.com/A11AN0"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="contact-me__content__symbol-container__link"
+                    >
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    <a
+                        href="mailto:matrixboston7613@gmail.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="contact-me__content__symbol-container__link"
+                    >
+                        <FontAwesomeIcon icon={faEnvelope} />
+                    </a>
                 </div>
             </div>
         </section>

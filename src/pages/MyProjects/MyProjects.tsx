@@ -37,7 +37,7 @@ const MyProjects = ({ isNavExtended, setPageInViewport }: AppProps) => {
     }, [inViewport, setPageInViewport]);
 
     return (
-        <section className="my-projects" id="projects">
+        <section className="my-projects">
             <h1 className="my-projects__title my-projects__shift">
                 My Projects.
             </h1>

@@ -131,7 +131,7 @@ const AboutMe = ({ isNavExtended, setPageInViewport }: AppProps) => {
     }, [inViewport, setPageInViewport]);
 
     return (
-        <section className="about-me" id="about">
+        <section className="about-me">
             <div className="about-me__title about-me__shiftingElement ">
                 <p
                     className="about-me__title__prompt about-me__title__prompt--left"

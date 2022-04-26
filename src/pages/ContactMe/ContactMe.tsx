@@ -20,7 +20,7 @@ const ContactMe = (props: any) => {
         setPageInViewport("contactMe");
     }, [inViewport, setPageInViewport]);
     return (
-        <section className="contact-me" id="contact">
+        <section className="contact-me">
             <h1 className="contact-me__title my-projects__shift">
                 Contact Me.
             </h1>

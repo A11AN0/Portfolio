@@ -65,7 +65,7 @@ const Intro = (props: any) => {
     }, [inViewport, setPageInViewport]);
 
     return (
-        <div className="intro" id="allan">
+        <div className="intro">
             <div
                 className="intro__title"
                 ref={container}

@@ -71,6 +71,9 @@ const Intro = (props: any) => {
                 className="intro__title"
                 ref={container}
                 style={{ lineHeight: isNavExtended ? "1em" : "0.55em" }}
+                onClick={() => {
+                    scrollDown();
+                }}
             >
                 <Tilt transitionSpeed={5000}>
                     <p ref={title}>Hello, I'm Allan.</p>
@@ -79,9 +82,6 @@ const Intro = (props: any) => {
                 <FontAwesomeIcon
                     icon={faChevronDown}
                     className="intro__title__arrow"
-                    onClick={() => {
-                        scrollDown();
-                    }}
                 />
             </div>
         </div>

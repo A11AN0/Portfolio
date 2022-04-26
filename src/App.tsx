@@ -9,13 +9,31 @@ import MyProjects from "./pages/MyProjects";
 const App = () => {
     const [isNavExtended, setIsNavExtended] = useState(false);
 
+    //For the navbar display upon scroll
+    const [pageInViewPort, setPageInViewport] = useState("intro");
+
     return (
         <>
-            <Navbar setIsNavExtended={setIsNavExtended} />
-            <Intro isNavExtended={isNavExtended} />
-            <AboutMe isNavExtended={isNavExtended} />
-            <MyProjects isNavExtended={isNavExtended} />
-            <ContactMe isNavExtended={isNavExtended} />
+            <Navbar
+                setIsNavExtended={setIsNavExtended}
+                pageInViewport={pageInViewPort}
+            />
+            <Intro
+                isNavExtended={isNavExtended}
+                setPageInViewport={setPageInViewport}
+            />
+            <AboutMe
+                isNavExtended={isNavExtended}
+                setPageInViewport={setPageInViewport}
+            />
+            <MyProjects
+                isNavExtended={isNavExtended}
+                setPageInViewport={setPageInViewport}
+            />
+            <ContactMe
+                isNavExtended={isNavExtended}
+                setPageInViewport={setPageInViewport}
+            />
         </>
     );
 };

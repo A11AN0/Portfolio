@@ -14,6 +14,7 @@ const Intro = (props: any) => {
     const title: any = useRef();
     useEffect(() => {
         const animationTimeline = gsap.timeline();
+        animationTimeline.delay(1);
         animationTimeline.from(title.current, {
             y: "250px",
             opacity: 0,

@@ -28,10 +28,37 @@ const Navbar = (props: any) => {
     };
 
     //Procedure to set the colour of elements within the navbar depending on pageInViewport
-
     const handleIconColour = (iconPage: string) => {
         if (iconPage !== pageInViewport) return "notCurrent";
         return "current";
+    };
+
+    //Procedure to set the colour of elements within the navbar depending on pageInViewport
+    const windowScroller = (distance: number) => {
+        window.scrollTo({
+            top: distance * window.innerHeight,
+            behavior: "smooth",
+        });
+    };
+
+    const scrollToPage = (pageIcon: string) => {
+        switch (pageIcon) {
+            case "intro":
+                windowScroller(0);
+                break;
+            case "aboutMe":
+                windowScroller(1);
+                break;
+            case "myProjects":
+                windowScroller(2);
+                break;
+            case "contactMe":
+                windowScroller(3);
+                break;
+
+            default:
+                return;
+        }
     };
 
     return (
@@ -42,9 +69,11 @@ const Navbar = (props: any) => {
         >
             <ul className="navbar-nav">
                 <li className="logo">
-                    <a
-                        href="#allan"
+                    <span
                         className={`nav-link ${handleIconColour("intro")}`}
+                        onClick={() => {
+                            scrollToPage("intro");
+                        }}
                     >
                         <span className="link-text logo-text">Allan.O</span>
                         <svg
@@ -70,13 +99,15 @@ const Navbar = (props: any) => {
                                 ></path>
                             </g>
                         </svg>
-                    </a>
+                    </span>
                 </li>
 
                 <li className="nav-item">
-                    <a
-                        href="#about"
+                    <span
                         className={`nav-link ${handleIconColour("aboutMe")}`}
+                        onClick={() => {
+                            scrollToPage("aboutMe");
+                        }}
                     >
                         <svg
                             aria-hidden="true"
@@ -102,12 +133,14 @@ const Navbar = (props: any) => {
                             </g>
                         </svg>
                         <span className="link-text">About Me</span>
-                    </a>
+                    </span>
                 </li>
                 <li className="nav-item">
-                    <a
-                        href="#projects"
+                    <span
                         className={`nav-link ${handleIconColour("myProjects")}`}
+                        onClick={() => {
+                            scrollToPage("myProjects");
+                        }}
                     >
                         <svg
                             aria-hidden="true"
@@ -135,12 +168,14 @@ const Navbar = (props: any) => {
                             </g>
                         </svg>
                         <span className="link-text">My Projects</span>
-                    </a>
+                    </span>
                 </li>
                 <li className="nav-item">
-                    <a
-                        href="#contact"
+                    <span
                         className={`nav-link ${handleIconColour("contactMe")}`}
+                        onClick={() => {
+                            scrollToPage("contactMe");
+                        }}
                     >
                         <svg
                             aria-hidden="true"
@@ -168,7 +203,7 @@ const Navbar = (props: any) => {
                             </g>
                         </svg>
                         <span className="link-text">Contact Me</span>
-                    </a>
+                    </span>
                 </li>
             </ul>
         </nav>

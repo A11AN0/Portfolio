@@ -10,12 +10,14 @@ import Description from "./Description/Description";
 import TechStack from "./TechStack/TechStack";
 import Skills from "./Skills/Skills";
 import FooterPrompt from "../../components/FooterPrompt/FooterPrompt";
+import { useInViewport } from "react-in-viewport";
 
 type AppProps = {
     isNavExtended: boolean;
+    setPageInViewport: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const AboutMe = ({ isNavExtended }: AppProps) => {
+const AboutMe = ({ isNavExtended, setPageInViewport }: AppProps) => {
     //Procedure for setting the titles in the arrow prompt for each section
     const [elementInViewPort, setElementInViewPort] = useState("description"); //will alert the user when the element is in viewport
     const handlePromptVisibility = (visibleElement: string) => {
@@ -100,8 +102,8 @@ const AboutMe = ({ isNavExtended }: AppProps) => {
             duration: 0.1,
         });
         timeline.to(`.about-me__title__prompt--${promptDirection}`, {
-            opacity: action === "mouseenter" ? 1 : 0.2,
-            duration: 0.5,
+            opacity: action === "mouseenter" ? 1 : 0.4,
+            duration: 0.4,
         });
     };
 
@@ -114,6 +116,19 @@ const AboutMe = ({ isNavExtended }: AppProps) => {
             behavior: "smooth",
         });
     };
+
+    /*XXXXXXXXX Procedure to detect if element is in viewport XXXXXXXXX, 
+    
+    Will do something when it detects that the element is in viewport,
+    can be more recyclable after refactoring, after defining a ref, simply assign an component/div etc the ref of anchor, which will
+    be used to determine whether or not the component is in the viewport*/
+
+    const aboutMeAnchor: any = useRef();
+    const { inViewport } = useInViewport(aboutMeAnchor);
+    useEffect(() => {
+        if (!inViewport) return;
+        setPageInViewport("aboutMe");
+    }, [inViewport, setPageInViewport]);
 
     return (
         <section className="about-me" id="about">
@@ -137,7 +152,9 @@ const AboutMe = ({ isNavExtended }: AppProps) => {
                         scroll("left");
                     }}
                 />
-                <p className="about-me__title__main">About Me.</p>
+                <p className="about-me__title__main" ref={aboutMeAnchor}>
+                    About Me.
+                </p>
                 <FontAwesomeIcon
                     icon={faChevronRight}
                     className="about-me__title__arrow about-me__title__arrow--right"

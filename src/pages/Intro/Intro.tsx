@@ -4,10 +4,11 @@ import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Tilt from "react-parallax-tilt";
+import { useInViewport } from "react-in-viewport";
 
 //will need to change this to a stateful component and remove the use of any
 const Intro = (props: any) => {
-    const { isNavExtended } = props;
+    const { isNavExtended, setPageInViewport } = props;
 
     //The rising animation for the title + repeating arrow motion
     const title: any = useRef();
@@ -51,6 +52,18 @@ const Intro = (props: any) => {
         });
     };
 
+    /*XXXXXXXXX Procedure to detect if element is in viewport XXXXXXXXX, 
+    
+    Will do something when it detects that the element is in viewport,
+    can be more recyclable after refactoring, after defining a ref, simply assign an component/div etc the ref of anchor, which will
+    be used to determine whether or not the component is in the viewport*/
+
+    const { inViewport } = useInViewport(title);
+    useEffect(() => {
+        if (!inViewport) return;
+        setPageInViewport("intro");
+    }, [inViewport, setPageInViewport]);
+
     return (
         <div className="intro" id="allan">
             <div
@@ -58,17 +71,17 @@ const Intro = (props: any) => {
                 ref={container}
                 style={{ lineHeight: isNavExtended ? "1em" : "0.55em" }}
             >
-                <Tilt transitionSpeed={2000}>
+                <Tilt transitionSpeed={5000}>
                     <p ref={title}>Hello, I'm Allan.</p>
-
-                    <FontAwesomeIcon
-                        icon={faChevronDown}
-                        className="intro__title__arrow"
-                        onClick={() => {
-                            scrollDown();
-                        }}
-                    />
                 </Tilt>
+
+                <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="intro__title__arrow"
+                    onClick={() => {
+                        scrollDown();
+                    }}
+                />
             </div>
         </div>
     );

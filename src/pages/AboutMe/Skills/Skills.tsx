@@ -41,6 +41,7 @@ const Skills = ({ isNavExtended, setElementInViewPort }: AppProps) => {
                 primaryColor={experience.primaryColor}
                 secondaryColor={experience.secondaryColor}
                 isNavExtended={isNavExtended}
+                inViewport={inViewport}
             />
         ));
     };

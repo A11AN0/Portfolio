@@ -6,9 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import {
     elementScrollByPolyfill,
     windowScrollByPolyfill,
+    windowScrollToPolyfill,
 } from "seamless-scroll-polyfill";
 windowScrollByPolyfill();
 elementScrollByPolyfill();
+windowScrollToPolyfill();
 
 ReactDOM.render(
     <React.StrictMode>

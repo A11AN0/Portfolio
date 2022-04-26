@@ -10,6 +10,7 @@ type AppProps = {
     primaryColor: string;
     secondaryColor: string;
     isNavExtended: boolean;
+    inViewport: boolean;
 };
 
 const SkillChart = ({
@@ -19,6 +20,7 @@ const SkillChart = ({
     primaryColor,
     secondaryColor,
     isNavExtended,
+    inViewport,
 }: AppProps) => {
     /*Will animate the chart upon mounting, 
   uses the percentage parameter to determine the width of the chart*/
@@ -28,10 +30,12 @@ const SkillChart = ({
     useEffect(() => {
         const arrowAnimationTimeline = gsap.timeline();
         arrowAnimationTimeline.to(chart.current, {
-            strokeDashoffset: ((100 - percentage) / 100) * 500,
-            duration: 10,
+            strokeDashoffset: inViewport
+                ? ((100 - percentage) / 100) * 500
+                : 472,
+            duration: 7,
         });
-    });
+    }, [inViewport, percentage]);
 
     //Animation upon mouse entering and leaving the chart, also works according to chart appearance as determined by screen size
     const maxWidthToOccur = 1500; //simply adjust THIS value to set the upper limit of the range between which handleChartAppearance will be called

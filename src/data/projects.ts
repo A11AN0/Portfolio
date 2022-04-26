@@ -21,6 +21,7 @@ export type ProjectData = {
     liveSiteLink: string;
     techStack: TechData[];
     backgroundUrl: string;
+    isDark: boolean;
 };
 
 const projectListData: ProjectData[] = [
@@ -36,6 +37,7 @@ const projectListData: ProjectData[] = [
             { techName: "Sass", icon: faSass, color: "#ff196e" },
         ],
         backgroundUrl: "./images/snake.png",
+        isDark: false,
     },
     {
         name: "Six-Pack",
@@ -46,9 +48,10 @@ const projectListData: ProjectData[] = [
         techStack: [
             { techName: "react", icon: faReact, color: "#1fd2ff" },
             { techName: "Sass", icon: faSass, color: "#ff196e" },
-            { techName: "API Integration", icon: faServer, color: "white" },
+            { techName: "API Integration", icon: faServer, color: "#9500ff" },
         ],
         backgroundUrl: "./images/sixpack.png",
+        isDark: false,
     },
 
     {
@@ -59,11 +62,12 @@ const projectListData: ProjectData[] = [
         liveSiteLink: "https://a11an0.github.io/Hostile-Aliens/",
         techStack: [
             { techName: "javascript", icon: faJsSquare, color: "#fbff26" },
-            { techName: "unit-testing", icon: faCogs, color: "lightgrey" },
+            { techName: "unit-testing", icon: faCogs, color: "grey" },
             { techName: "Sass", icon: faSass, color: "#ff196e" },
-            { techName: "OOP", icon: faPuzzlePiece, color: "#fbff00" },
+            { techName: "OOP", icon: faPuzzlePiece, color: "#07e6c0" },
         ],
         backgroundUrl: "./images/hostilealiens.png",
+        isDark: true,
     },
     {
         name: "Translator",
@@ -72,12 +76,13 @@ const projectListData: ProjectData[] = [
         codeBaseLink: "https://github.com/A11AN0/MorseCode-Translator",
         liveSiteLink: "https://a11an0.github.io/MorseCode-Translator/",
         techStack: [
-            { techName: "OOP", icon: faPuzzlePiece, color: "#fbff00" },
+            { techName: "OOP", icon: faPuzzlePiece, color: "#07e6c0" },
             { techName: "javascript", icon: faJsSquare, color: "#fbff26" },
             { techName: "Sass", icon: faSass, color: "#ff196e" },
-            { techName: "unit-testing", icon: faCogs, color: "lightgrey" },
+            { techName: "unit-testing", icon: faCogs, color: "grey" },
         ],
         backgroundUrl: "./images/translator.png",
+        isDark: false,
     },
     {
         name: "Calculator",
@@ -91,6 +96,7 @@ const projectListData: ProjectData[] = [
             { techName: "Sass", icon: faSass, color: "#ff196e" },
         ],
         backgroundUrl: "./images/calculator.png",
+        isDark: false,
     },
     {
         name: "Celestial",
@@ -101,10 +107,11 @@ const projectListData: ProjectData[] = [
         techStack: [
             { techName: "Node.js & Express", icon: faNode, color: "#00bd39" },
             { techName: "javascript", icon: faJsSquare, color: "#fbff26" },
-            { techName: "data", icon: faDatabase, color: "#4db5ff" },
-            { techName: "API Integration", icon: faServer, color: "white" },
+            { techName: "data", icon: faDatabase, color: "#ff0073" },
+            { techName: "API Integration", icon: faServer, color: "#9500ff" },
         ],
         backgroundUrl: "./images/celestial.png",
+        isDark: true,
     },
     {
         name: "Orb",
@@ -115,10 +122,11 @@ const projectListData: ProjectData[] = [
         techStack: [
             { techName: "Node.js & Express", icon: faNode, color: "#00bd39" },
             { techName: "react", icon: faReact, color: "#1fd2ff" },
-            { techName: "data", icon: faDatabase, color: "#4db5ff" },
-            { techName: "API Integration", icon: faServer, color: "white" },
+            { techName: "data", icon: faDatabase, color: "#ff0073" },
+            { techName: "API Integration", icon: faServer, color: "#9500ff" },
         ],
         backgroundUrl: "./images/orb.png",
+        isDark: false,
     },
     {
         name: "PDfusion",
@@ -128,6 +136,7 @@ const projectListData: ProjectData[] = [
         liveSiteLink: "",
         techStack: [{ techName: "python", icon: faPython, color: "#7bff00" }],
         backgroundUrl: "./images/pdfusion.png",
+        isDark: false,
     },
 ];
 

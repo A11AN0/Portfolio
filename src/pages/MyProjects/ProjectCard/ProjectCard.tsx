@@ -54,6 +54,8 @@ const ProjectCard = ({ project, blank, isNavExtended }: AppProps) => {
         ));
     };
 
+    const textColour = project?.isDark ? "darkMode" : "lightMode";
+
     //Function to generate project links
     const generateCodeBaseLink = () => {
         if (project?.codeBaseLink.length === 0) return;
@@ -68,9 +70,12 @@ const ProjectCard = ({ project, blank, isNavExtended }: AppProps) => {
                     <FontAwesomeIcon
                         className="projectCard__container__info__links__item__svg"
                         icon={faGithubSquare}
+                        style={{ color: project?.isDark ? "#fff" : "#000" }}
                     />
                 </a>
-                <p className="projectCard__container__info__links__item__text">
+                <p
+                    className={`projectCard__container__info__links__item__text ${textColour}`}
+                >
                     Codebase
                 </p>
             </div>
@@ -90,10 +95,13 @@ const ProjectCard = ({ project, blank, isNavExtended }: AppProps) => {
                     <FontAwesomeIcon
                         className="projectCard__container__info__links__item__svg"
                         icon={faExternalLinkSquare}
+                        style={{ color: project?.isDark ? "#fff" : "#000" }}
                     />
                 </a>
 
-                <p className="projectCard__container__info__links__item__text">
+                <p
+                    className={`projectCard__container__info__links__item__text ${textColour}`}
+                >
                     Site
                 </p>
             </div>
@@ -125,14 +133,18 @@ const ProjectCard = ({ project, blank, isNavExtended }: AppProps) => {
                         isHovered && `projectCard__container--hovered`
                     }`}
                 >
-                    <p className="projectCard__container__title">
+                    <p
+                        className={`projectCard__container__title ${textColour}`}
+                    >
                         {project!.name}
                     </p>
 
                     <div
                         className={`projectCard__container__info ${specificClassName}`}
                     >
-                        <p className="projectCard__container__info__description">
+                        <p
+                            className={`projectCard__container__info__description ${textColour}`}
+                        >
                             {project!.description}
                         </p>
                         <div className="projectCard__container__info__links">

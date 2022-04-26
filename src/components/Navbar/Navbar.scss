@@ -38,7 +38,7 @@
     color: $color-title;
     text-decoration: none;
     font-weight: 300;
-    filter: grayscale(100%) opacity(0.7);
+
     transition: 600ms ease;
 
     &:hover {
@@ -157,5 +157,16 @@
                 left: 0px;
             }
         }
+    }
+}
+
+.notCurrent {
+    filter: grayscale(100%) opacity(0.5);
+}
+
+.current {
+    filter: grayscale(0%) opacity(1);
+    .fa-primary {
+        color: rgb(108, 108, 226);
     }
 }

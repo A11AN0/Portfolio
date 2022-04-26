@@ -58,8 +58,8 @@ const Description = ({ isNavExtended, setElementInViewPort }: AppProps) => {
                     application on the serverside.
                     <br ref={viewPortAnchor} /> <br />
                     Highly driven, adaptable, personable and team-oriented. I
-                    strive to deliver a polished product for client and
-                    corporation alike.
+                    strive to deliver a polished product for client and company
+                    alike.
                 </p>
             </div>
         </div>

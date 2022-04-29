@@ -56,6 +56,9 @@ const ContactMe = (props: any) => {
                         <FontAwesomeIcon icon={faEnvelope} />
                     </a>
                 </div>
+                <div className="contact-me__content__copyright">
+                    © Allan Odunga 2022
+                </div>
             </div>
         </section>
     );

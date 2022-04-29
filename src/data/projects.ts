@@ -2,7 +2,7 @@ import {
     faJsSquare,
     faHtml5,
     faSass,
-    faPython,
+    // faPython,
     faReact,
     faNode,
 } from "@fortawesome/free-brands-svg-icons";
@@ -128,16 +128,16 @@ const projectListData: ProjectData[] = [
         backgroundUrl: "./images/orb.png",
         isDark: false,
     },
-    {
-        name: "PDfusion",
-        description:
-            "A convenient and efficient script which allows users combine multiple PDF files. Planned GUI being developed using Tkinter",
-        codeBaseLink: "https://github.com/A11AN0/Mini-Apps/tree/main/pdFusion",
-        liveSiteLink: "",
-        techStack: [{ techName: "python", icon: faPython, color: "#7bff00" }],
-        backgroundUrl: "./images/pdfusion.png",
-        isDark: false,
-    },
+    // {
+    //     name: "PDfusion",
+    //     description:
+    //         "A convenient and efficient script which allows users combine multiple PDF files. Planned GUI being developed using Tkinter",
+    //     codeBaseLink: "https://github.com/A11AN0/Mini-Apps/tree/main/pdFusion",
+    //     liveSiteLink: "",
+    //     techStack: [{ techName: "python", icon: faPython, color: "#7bff00" }],
+    //     backgroundUrl: "./images/pdfusion.png",
+    //     isDark: false,
+    // },
 ];
 
 export default projectListData;

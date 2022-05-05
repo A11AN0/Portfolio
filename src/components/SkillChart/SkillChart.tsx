@@ -33,7 +33,7 @@ const SkillChart = ({
             strokeDashoffset: inViewport
                 ? ((100 - percentage) / 100) * 500
                 : 472,
-            duration: 7,
+            duration: 4,
         });
     }, [inViewport, percentage]);
 

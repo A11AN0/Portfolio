@@ -19,7 +19,6 @@ const Intro = (props: any) => {
             y: "250px",
             opacity: 0,
             duration: 2,
-            color: "black",
         });
         animationTimeline.to(
             ".intro__title__arrow",

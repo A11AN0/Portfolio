@@ -52,8 +52,8 @@ const Description = ({ isNavExtended, setElementInViewPort }: AppProps) => {
             <div className="description__top"></div>
             <div className="description__text">
                 <p className="description__text__paragraph">
-                    I'm an Australian junior full-stack developer with a passion
-                    for creating beautiful, intuitive, and responsive user
+                    I'm an Australian full-stack engineer with a passion for
+                    creating beautiful, intuitive, and responsive user
                     experiences, while meeting the functional demands of an
                     application on the serverside.
                     <br ref={viewPortAnchor} /> <br />

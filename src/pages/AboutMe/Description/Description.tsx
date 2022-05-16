@@ -52,7 +52,7 @@ const Description = ({ isNavExtended, setElementInViewPort }: AppProps) => {
             <div className="description__top"></div>
             <div className="description__text">
                 <p className="description__text__paragraph">
-                    I'm an Australian full-stack engineer with a passion for
+                    I'm an Australian software developer with a passion for
                     creating beautiful, intuitive, and responsive user
                     experiences, while meeting the functional demands of an
                     application on the serverside.
